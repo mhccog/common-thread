@@ -154,6 +154,12 @@ def main():
             pairs.append({'from': it['id'], 'to': items[j]['id'], 'score': round(best[0], 3),
                           'terms': shared_terms(vecs[i], vecs[j])})
     pairs.sort(key=lambda p: -p['score'])
+    prev = read_json('solved.json')
+    if prev and len(items) < 0.9 * prev['meta'].get('count', 0):
+        # a partial fetch (e.g. a cold cache) must not shrink the layer; keep the fuller build
+        prev['meta']['status'] = {'ok': True, 'note': f'Refresh in progress: {len(items)} of {prev["meta"]["count"]} cases re-read so far; showing the previous full build.'}
+        write_json('solved.json', prev)
+        return
     write_json('solved.json', {
         'meta': {'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'count': len(items),
                  'documented': sum(1 for x in items if x['documented']), 'pairs': len(pairs), 'listed': len(ids),

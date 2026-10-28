@@ -117,6 +117,11 @@ def main():
     json.dump(owners_cache, open(os.path.join(os.path.dirname(__file__), '..', 'data-cache', 'owners.json'), 'w'), indent=0, sort_keys=True)
     save_places()
     placed = sum(1 for i in items if i['place'])
+    prev = read_json('unfinished.json')
+    if prev and len(items) < 0.8 * prev['meta'].get('count', 0):
+        prev['meta']['status'] = {'ok': False, 'note': f'GitHub search returned less than usual this run ({len(items)} items); showing the previous build.'}
+        write_json('unfinished.json', prev)
+        return
     write_json('unfinished.json', {'meta': {'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'count': len(items), 'placed': placed,
                                             'minStars': MIN_STARS, 'source': 'GitHub (archived repositories)', 'status': status}, 'items': items})
 

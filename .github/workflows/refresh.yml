@@ -56,4 +56,5 @@ jobs:
           git add docs/data data-cache
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "Refresh the threads ($(date -u +%Y-%m-%d))"
+          git pull --rebase -X theirs || git pull --rebase
           git push
