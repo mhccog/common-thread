@@ -106,12 +106,12 @@ map.on('load', async () => {
   map.addLayer({ id: 'p3', type: 'symbol', source: 'p3', layout: { 'icon-image': ['case', ['==', ['get', 'src'], 'ct'], 'ringdot', 'ring'], 'icon-size': ['interpolate', ['linear'], ['get', 'w'], 0, 0.22, 1, 0.62], 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'icon-pitch-alignment': 'map', 'icon-rotation-alignment': 'map' }, paint: { 'icon-opacity': 0.85 } });
   // 1: converging teams, amber arcs with travelling sparks
   map.addLayer({ id: 'p1t-glow', type: 'line', source: 'p1t', layout: { 'line-cap': 'round' }, paint: { 'line-color': P.p1.colour, 'line-width': 5, 'line-blur': 5, 'line-opacity': 0.12 } });
-  map.addLayer({ id: 'p1t', type: 'line', source: 'p1t', layout: { 'line-cap': 'round' }, paint: { 'line-color': P.p1.colour, 'line-width': 1, 'line-opacity': ['interpolate', ['linear'], ['zoom'], 2.5, 0.55, 5, 0.16] } });
+  map.addLayer({ id: 'p1t', type: 'line', source: 'p1t', layout: { 'line-cap': 'round' }, paint: { 'line-color': P.p1.colour, 'line-width': 0.9, 'line-opacity': ['interpolate', ['linear'], ['zoom'], 2.5, 0.42, 5, 0.14] } });
   map.addLayer({ id: 'p1s', type: 'circle', source: 'p1s', paint: { 'circle-radius': 2.6, 'circle-blur': 0.8, 'circle-color': '#e0962e', 'circle-opacity': ['get', 'o'], 'circle-pitch-alignment': 'map' } });
   map.addLayer({ id: 'p1', type: 'circle', source: 'p1', paint: { 'circle-radius': 3.2, 'circle-color': P.p1.colour, 'circle-opacity': 0.95, 'circle-stroke-width': 4, 'circle-stroke-color': P.p1.colour, 'circle-stroke-opacity': 0.16, 'circle-pitch-alignment': 'map' } });
   // gold threads where layers meet
   map.addLayer({ id: 'lk-glow', type: 'line', source: 'lk', layout: { 'line-cap': 'round' }, paint: { 'line-color': '#e8c66e', 'line-width': 8, 'line-blur': 7, 'line-opacity': 0.32 } });
-  map.addLayer({ id: 'lk', type: 'line', source: 'lk', layout: { 'line-cap': 'round' }, paint: { 'line-color': LINK, 'line-width': 1.6, 'line-opacity': ['interpolate', ['linear'], ['zoom'], 2.5, 0.9, 5, 0.35] } });
+  map.addLayer({ id: 'lk', type: 'line', source: 'lk', layout: { 'line-cap': 'round' }, paint: { 'line-color': LINK, 'line-width': 1.2, 'line-opacity': ['interpolate', ['linear'], ['zoom'], 2.5, 0.9, 5, 0.35] } });
   map.addLayer({ id: 'lks', type: 'circle', source: 'lks', paint: { 'circle-radius': 3, 'circle-blur': 0.7, 'circle-color': '#c8921a', 'circle-opacity': ['get', 'o'], 'circle-pitch-alignment': 'map' } });
   map.addLayer({ id: 'sel', type: 'circle', source: 'sel', paint: { 'circle-radius': 14, 'circle-color': 'transparent', 'circle-stroke-color': ['get', 'c'], 'circle-stroke-width': 1.2, 'circle-stroke-opacity': 0.9, 'circle-pitch-alignment': 'map' } });
 

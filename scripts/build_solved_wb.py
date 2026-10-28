@@ -11,10 +11,12 @@ MIN_EVAL_FY = 2008
 
 
 def jitter(s, amt):
+    import math
     h = 2166136261
     for ch in s:
         h = ((h ^ ord(ch)) * 16777619) & 0xffffffff
-    return ((h % 2000) / 1000 - 1) * amt, (((h >> 11) % 2000) / 1000 - 1) * amt
+    a, r = (h % 3600) / 3600 * 2 * math.pi, math.sqrt(((h >> 12) % 1000) / 1000) * amt  # even spread in a disc
+    return math.cos(a) * r, math.sin(a) * r
 
 
 def main():
