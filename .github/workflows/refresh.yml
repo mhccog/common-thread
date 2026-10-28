@@ -1,0 +1,59 @@
+name: Refresh the threads
+
+on:
+  schedule:
+    - cron: "41 5 * * *"   # daily, 05:41 UTC (after stuck-on's 04:23 rebuild)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore Participedia case cache
+        uses: actions/cache@v4
+        with:
+          path: cache/participedia
+          key: participedia-${{ github.run_id }}
+          restore-keys: participedia-
+      - name: "1 · You're not the only one (reuse weekly sweep)"
+        continue-on-error: true
+        run: cd scripts && python -u build_converging.py
+      - name: "4 · Everything we're stuck on (reuse daily sky)"
+        continue-on-error: true
+        run: cd scripts && python -u build_stuck.py
+      - name: "2 · Solved somewhere else (Participedia)"
+        continue-on-error: true
+        env:
+          SOLVED_MINUTES: "40"
+        run: cd scripts && python -u build_solved.py
+      - name: "3 · The world's unfinished work (archived GitHub repositories)"
+        continue-on-error: true
+        env:
+          # The workflow's own short-lived token, used only for GitHub's public search and user APIs.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cd scripts && python -u build_unfinished.py
+      - name: "5 · Leftovers and missing pieces (OpenStreetMap)"
+        continue-on-error: true
+        run: cd scripts && python -u build_leftovers.py
+      - name: Gold threads (cross-layer links)
+        run: cd scripts && python -u build_links.py
+      - name: Commit refreshed data
+        run: |
+          git config user.name "common-thread bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data data-cache
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Refresh the threads ($(date -u +%Y-%m-%d))"
+          git push

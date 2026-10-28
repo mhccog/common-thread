@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Common Thread</title>
+<meta name="description" content="Connecting people to people, and solutions to problems. Five quiet layers of real public data on one globe.">
+<meta name="theme-color" content="#03050a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23fff1c9' stroke-width='1.4'/%3E%3Cpath d='M6 20 Q16 4 26 13' stroke='%23ffcf8a' fill='none' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div id="map" aria-label="Globe"></div>
+<canvas id="overlay" aria-hidden="true"></canvas>
+<div class="vignette"></div>
+
+<header class="brand">
+  <h1>Common Thread <span class="wip" title="A working name, not tested yet">working name</span></h1>
+  <p>Connecting people to people, and solutions to problems.</p>
+</header>
+
+<section class="find">
+  <input id="q" type="search" placeholder="Search all five layers…" aria-label="Search all five layers" autocomplete="off" maxlength="80">
+  <ul id="results" class="results" role="listbox" hidden></ul>
+</section>
+
+<nav class="legend" id="legend" aria-label="Layers"></nav>
+
+<section class="caption" id="caption" aria-live="polite">
+  <p class="cap-kicker" id="capKicker"></p>
+  <p class="cap-main" id="capMain">Gathering the threads…</p>
+</section>
+
+<div class="dock">
+  <button id="driftBtn" class="ghost" aria-pressed="true"><span class="dot"></span><span id="driftLabel">Drifting through all five</span></button>
+  <button id="aboutBtn" class="ghost">What is this?</button>
+</div>
+
+<aside class="detail" id="detail" hidden aria-label="Details">
+  <button class="close" id="detailClose" aria-label="Close">×</button>
+  <div id="detailBody"></div>
+</aside>
+
+<dialog id="intro">
+  <h2>Common Thread</h2>
+  <p class="lede">Somewhere, someone has the answer to your problem, or is stuck on the same one. This globe draws five kinds of quiet connection from real public records.</p>
+  <ol class="five" id="introFive"></ol>
+  <p class="where"><span class="sw link"></span> A <strong>gold thread</strong> appears where two layers genuinely meet, for example an abandoned project that tackled a problem people are working on again today.</p>
+  <p class="small">Everything shown is a real public record with a link. Nothing is invented; where a source is thin or missing, the page says so. Nobody is contacted. <strong>Introductions will come later, and only with consent.</strong> "Common Thread" is a working name.</p>
+  <form method="dialog"><button autofocus>Start drifting</button></form>
+</dialog>
+
+<div id="tip" class="tip" hidden></div>
+
+<script src="vendor/maplibre-gl.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
