@@ -38,17 +38,35 @@ jobs:
         env:
           SOLVED_MINUTES: "40"
         run: cd scripts && python -u build_solved.py
+      - name: "2b · Solved somewhere else (World Bank IEG ratings, CC BY 4.0)"
+        continue-on-error: true
+        run: cd scripts && python -u build_solved_wb.py
       - name: "3 · The world's unfinished work (archived GitHub repositories)"
         continue-on-error: true
         env:
           # The workflow's own short-lived token, used only for GitHub's public search and user APIs.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: cd scripts && python -u build_unfinished.py
+      - name: "3b · The world's unfinished work (ClinicalTrials.gov stopped studies)"
+        continue-on-error: true
+        run: cd scripts && python -u build_trials.py
       - name: "5 · Leftovers and missing pieces (OpenStreetMap)"
         continue-on-error: true
         run: cd scripts && python -u build_leftovers.py
+      - name: "5b · Missing pieces (Give Food needs, CC BY 4.0)"
+        continue-on-error: true
+        run: cd scripts && python -u build_needs.py
       - name: Gold threads (cross-layer links)
         run: cd scripts && python -u build_links.py
+      - name: Sources & trust (validate, check freshness, spot-check records against originals)
+        run: cd scripts && python -u check_data.py 4
+      - name: Check the page's own links (lychee)
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-retries 2 --accept 200,201,202,203,204,206,301,302,303,307,308,403,429 docs/index.html README.md
+          fail: false
+          jobSummary: true
       - name: Commit refreshed data
         run: |
           git config user.name "common-thread bot"

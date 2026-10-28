@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Common Thread</title>
 <meta name="description" content="Connecting people to people, and solutions to problems. Five quiet layers of real public data on one globe.">
-<meta name="theme-color" content="#03050a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23fff1c9' stroke-width='1.4'/%3E%3Cpath d='M6 20 Q16 4 26 13' stroke='%23ffcf8a' fill='none' stroke-width='1.6'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#f5f0e6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%2323211d' stroke-width='1.4'/%3E%3Cpath d='M6 20 Q16 4 26 13' stroke='%239a7414' fill='none' stroke-width='1.6'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -15,6 +15,7 @@
 <div id="map" aria-label="Globe"></div>
 <canvas id="overlay" aria-hidden="true"></canvas>
 <div class="vignette"></div>
+<div class="grain"></div>
 
 <header class="brand">
   <h1>Common Thread <span class="wip" title="A working name, not tested yet">working name</span></h1>
@@ -22,8 +23,11 @@
 </header>
 
 <section class="find">
-  <input id="q" type="search" placeholder="Search all five layers…" aria-label="Search all five layers" autocomplete="off" maxlength="80">
-  <ul id="results" class="results" role="listbox" hidden></ul>
+  <div class="box">
+    <input id="q" type="search" placeholder="Search all five layers…" aria-label="Search all five layers" autocomplete="off" maxlength="80">
+    <ul id="results" class="results" role="listbox" hidden></ul>
+  </div>
+  <button id="nearBtn" class="iconbtn" title="Near me: fly to where you are (your location stays on this device)" aria-label="Near me"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="8"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></button>
 </section>
 
 <nav class="legend" id="legend" aria-label="Layers"></nav>
@@ -36,6 +40,7 @@
 <div class="dock">
   <button id="driftBtn" class="ghost" aria-pressed="true"><span class="dot"></span><span id="driftLabel">Drifting through all five</span></button>
   <button id="aboutBtn" class="ghost">What is this?</button>
+  <button id="trustBtn" class="ghost"><span class="dotq ok" id="trustDot"></span>Sources &amp; trust</button>
 </div>
 
 <aside class="detail" id="detail" hidden aria-label="Details">
@@ -48,8 +53,15 @@
   <p class="lede">Somewhere, someone has the answer to your problem, or is stuck on the same one. This globe draws five kinds of quiet connection from real public records.</p>
   <ol class="five" id="introFive"></ol>
   <p class="where"><span class="sw link"></span> A bright <strong>common thread</strong> appears where two layers genuinely meet, for example an abandoned project that tackled a problem people are working on again today.</p>
-  <p class="small">Everything shown is a real public record with a link. Nothing is invented; where a source is thin or missing, the page says so. Nobody is contacted. <strong>Introductions will come later, and only with consent.</strong> "Common Thread" is a working name.</p>
-  <form method="dialog"><button autofocus>Start drifting</button></form>
+  <p class="small">Each mark carries a small trust note: who published it, its licence, and how fresh it is. A daily check re-reads a sample of records against their originals and hides any source that has gone stale or broken. Everything shown is a real public record with a link. Nothing is invented; where a source is thin or missing, the page says so. Nobody is contacted. <strong>Introductions will come later, and only with consent.</strong> "Common Thread" is a working name.</p>
+  <form method="dialog"><button class="sec" value="trust" id="introTrust">Sources &amp; trust</button><button autofocus>Start drifting</button></form>
+</dialog>
+
+<dialog id="trust" aria-label="Sources and trust">
+  <h2 tabindex="-1" autofocus>Sources &amp; trust</h2>
+  <p class="lede">Where every mark comes from, under what terms, and how it held up in today's check.</p>
+  <div id="trustBody">Loading…</div>
+  <form method="dialog"><button>Close</button></form>
 </dialog>
 
 <div id="tip" class="tip" hidden></div>

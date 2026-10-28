@@ -3,13 +3,15 @@ people leave what they have spare for whoever needs it. Only the offer side is o
 import json, time, datetime, urllib.parse
 from common import get, write_json, read_json, clip
 
-OVERPASS = ['https://maps.mail.ru/osm/tools/overpass/api/interpreter', 'https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter']
+OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter']  # mail.ru last: its copy of OSM was months behind in Oct 2026
 KINDS = [
     ('give_box', 'nwr["amenity"="give_box"]', 'Give box', 'A small shelter where anyone can leave things they no longer need, and anyone can take them.'),
     ('food_sharing', 'nwr["amenity"="food_sharing"]', 'Community fridge / food sharing', 'Surplus food left for anyone to take.'),
     ('freeshop', 'nwr["amenity"="freeshop"]', 'Free shop', 'A shop where everything is free.'),
     ('tool_library', 'nwr["amenity"="tool_library"]', 'Tool library', 'Tools lent out so people do not each have to buy one.'),
-    ('repair_cafe', 'nwr["repair_cafe"="yes"];nwr["amenity"="repair_cafe"]', 'Repair café', 'Volunteers fix broken things so they are not thrown away.'),
+    ('repair_cafe', 'nwr["repair_cafe"="yes"];nwr["amenity"="repair_cafe"];nwr["craft"="repair_cafe"]', 'Repair café', 'Volunteers fix broken things so they are not thrown away.'),
+    ('library_of_things', 'nwr["name"~"[Ll]ibrary [Oo]f [Tt]hings|[Ll]eihladen|[Bb]ibliothèque d.[Oo]bjets|[Bb]iblioteca de las [Cc]osas|[Bb]ibliotheek van [Dd]ingen"]', 'Library of things', 'Everyday things, from drills to tents, lent out like library books.'),
+    ('seed_library', 'nwr["name"~"[Ss]eed [Ll]ibrary|[Ss]aatgutbibliothek|[Gg]rainothèque|[Bb]iblioteca de [Ss]emillas|[Zz]adenbibliotheek"]', 'Seed library', 'Seeds given away to grow, with a few saved and returned.'),
 ]
 
 

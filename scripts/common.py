@@ -77,10 +77,27 @@ case cases project projects programme program process initiative city cities peo
 participants participant held took took place part one two three first second year years made make number many well including'''.split())
 
 
-def tokens(s):
+SYN = {'kids': 'child', 'children': 'child', 'childhood': 'child', 'paediatric': 'child', 'pediatric': 'child', 'youth': 'young',
+       'elderly': 'older', 'seniors': 'older', 'aged': 'older', 'jobs': 'employ', 'employment': 'employ', 'unemployment': 'employ',
+       'electricity': 'power', 'electric': 'power', 'potable': 'drinking', 'sanitation': 'sanit', 'schooling': 'school', 'schools': 'school',
+       'tumour': 'tumor', 'tumours': 'tumor', 'cancers': 'cancer', 'oncology': 'cancer', 'farmers': 'farm', 'farming': 'farm', 'agricultural': 'farm', 'agriculture': 'farm',
+       'homelessness': 'homeless', 'housing': 'house', 'houses': 'house', 'flooding': 'flood', 'floods': 'flood', 'droughts': 'drought'}
+
+
+def stem(w):
+    w = SYN.get(w, w)
+    for suf, rep in (('ational', 'ate'), ('ization', 'ize'), ('isation', 'ize'), ('ations', 'ate'), ('ation', 'ate'), ('ments', ''), ('ment', ''),
+                     ('ities', 'ity'), ('ies', 'y'), ('ing', ''), ('ed', ''), ('es', ''), ('s', '')):
+        if w.endswith(suf) and len(w) - len(suf) >= 4 and not w.endswith('ss'):
+            return w[: len(w) - len(suf)] + rep
+    return w
+
+
+def tokens(s, stemmed=False):
     s = (s or '').lower()
     words = re.findall(r"[^\W\d_][\w\-']{2,}", s)
-    return [w.strip("-'") for w in words if w.strip("-'") not in STOP and len(w) > 2]
+    out = [w.strip("-'") for w in words if w.strip("-'") not in STOP and len(w) > 2]
+    return [stem(w) for w in out] if stemmed else out
 
 
 def tfidf(docs):
