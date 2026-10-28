@@ -18,11 +18,21 @@ KINDS = [
 def overpass(q):
     body = urllib.parse.urlencode({'data': f'[out:json][timeout:170];({q};);out center tags;'}).encode()
     last = None
+    stale = None
     for url in OVERPASS:
         try:
-            return json.loads(get(url, data=body, timeout=200, tries=2, headers={'Content-Type': 'application/x-www-form-urlencoded'}))
+            d = json.loads(get(url, data=body, timeout=200, tries=2, headers={'Content-Type': 'application/x-www-form-urlencoded'}))
         except Exception as e:
-            last = e; print('overpass failed', url, e)
+            last = e; print('overpass failed', url, e); continue
+        base = (d.get('osm3s') or {}).get('timestamp_osm_base') or ''
+        age = (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(base.replace('Z', '+00:00'))).days if base else 999
+        if age <= 14:
+            return d
+        print('overpass mirror is', age, 'days behind, trying the next one:', url)
+        stale = stale or d
+        last = RuntimeError(f'mirror {age} days behind')
+    if stale is not None:
+        return stale  # every mirror was behind: use it, and the trust check will say so on the page
     raise last
 
 
