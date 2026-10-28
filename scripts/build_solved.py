@@ -24,6 +24,13 @@ def list_ids():
     return ids
 
 
+def km(a, b):
+    import math
+    la1, lo1, la2, lo2 = map(math.radians, (a['lat'], a['lon'], b['lat'], b['lon']))
+    h = math.sin((la2 - la1) / 2) ** 2 + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2
+    return 12742 * math.asin(math.sqrt(h))
+
+
 def section(body, *names):
     parts = re.split(r'<h2[^>]*>(.*?)</h2>', body or '')
     for i in range(1, len(parts) - 1, 2):
@@ -38,7 +45,10 @@ def section(body, *names):
 def main():
     status = {'ok': True, 'note': ''}
     try:
-        ids = list_ids()
+        if os.environ.get('SOLVED_OFFLINE'):  # local rebuild from the cache only
+            ids = {int(f[:-5]): '' for f in os.listdir(CDIR) if f.endswith('.json')}
+        else:
+            ids = list_ids()
     except Exception as e:
         print('listing failed', e)
         prev = read_json('solved.json')
@@ -49,6 +59,8 @@ def main():
     todo = []
     for cid, upd in sorted(ids.items(), key=lambda x: -x[0]):
         path = os.path.join(CDIR, f'{cid}.json')
+        if os.path.exists(path) and os.environ.get('SOLVED_OFFLINE'):
+            continue
         if os.path.exists(path):
             try:
                 if json.load(open(path)).get('updated_date', '')[:19] >= upd[:19]:
@@ -117,7 +129,7 @@ def main():
         })
 
     # Pair: same problem, different country; thread from the later attempt to the earlier documented one.
-    docs = [tokens(' '.join([it['title'], it['desc'], it['problem'], ' '.join(it['topics']) * 2])) for it in items]
+    docs = [tokens(' '.join([it['title'], it['desc'], it['problem'], (' '.join(it['topics']) + ' ') * 2])) for it in items]
     vecs = tfidf(docs)
     pairs = []
     for i, it in enumerate(items):
@@ -127,6 +139,8 @@ def main():
                 continue
             if not it['start'] or not jt['start'] or jt['start'] >= it['start']:
                 continue
+            if km(it, jt) < 300:  # 'another country' must really be elsewhere (names vary: Italia/Italy)
+                continue
             s = cos(vecs[i], vecs[j])
             if set(it['issues']) & set(jt['issues']):
                 s += 0.03
@@ -134,6 +148,9 @@ def main():
                 best = (s, j)
         if best and best[0] >= 0.30:
             j = best[1]
+            strong = [t for t in vecs[i] if t in vecs[j] and vecs[i][t] * vecs[j][t] >= 0.008]
+            if len(strong) < 3:
+                continue
             pairs.append({'from': it['id'], 'to': items[j]['id'], 'score': round(best[0], 3),
                           'terms': shared_terms(vecs[i], vecs[j])})
     pairs.sort(key=lambda p: -p['score'])

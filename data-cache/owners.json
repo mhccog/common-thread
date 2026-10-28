@@ -1,0 +1,1397 @@
+{
+"10up": {
+"loc": "United States",
+"name": "10up",
+"type": "Organization"
+},
+"18F": {
+"loc": "United States",
+"name": "18F",
+"type": "Organization"
+},
+"5calls": {
+"loc": "United States of America",
+"name": "5 Calls",
+"type": "Organization"
+},
+"AccessLint": {
+"loc": "United States of America",
+"name": "AccessLint",
+"type": "Organization"
+},
+"AnkiTools": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"AustinGil": {
+"loc": "United States",
+"name": "Austin Gil",
+"type": "User"
+},
+"BrianRuizy": {
+"loc": "New York, New York",
+"name": "Brian Ruiz",
+"type": "User"
+},
+"Bustbyte": {
+"loc": "Oslo, Norway",
+"name": "Bustbyte",
+"type": "Organization"
+},
+"CCI-Tools": {
+"loc": "ESA ECSAT, Harwell, UK",
+"name": "ESA CCI Toolbox (Cate)",
+"type": "Organization"
+},
+"CDCgov": {
+"loc": "Georgia",
+"name": "Centers for Disease Control and Prevention",
+"type": "Organization"
+},
+"CSSEGISandData": {
+"loc": "Baltimore, MD",
+"name": null,
+"type": "User"
+},
+"Call-for-Code": {
+"loc": "179 nations and growing",
+"name": "Call for Code\u00ae with The Linux Foundation",
+"type": "Organization"
+},
+"Canvasbird": {
+"loc": "Bangalore",
+"name": "Canvasbird",
+"type": "Organization"
+},
+"CaptainFact": {
+"loc": "France",
+"name": "CaptainFact",
+"type": "Organization"
+},
+"Chalarangelo": {
+"loc": "Athens, Greece",
+"name": "Angelos Chalaris",
+"type": "User"
+},
+"CityOfBoston": {
+"loc": "Boston, Massachusetts, USA",
+"name": "City of Boston",
+"type": "Organization"
+},
+"ClairBerlin": {
+"loc": "Berlin, Germay",
+"name": "COMO Berlin",
+"type": "Organization"
+},
+"Class-Widgets": {
+"loc": "China",
+"name": "Class Widgets",
+"type": "Organization"
+},
+"CliMA": {
+"loc": "United States of America",
+"name": "Climate Modeling Alliance",
+"type": "Organization"
+},
+"Code4PuertoRico": {
+"loc": "Puerto Rico",
+"name": "Code 4 Puerto Rico",
+"type": "Organization"
+},
+"CodeYourFuture": {
+"loc": "London, Glasgow, Manchester, Birmingham, Rome, Cape Town",
+"name": "CodeYourFuture",
+"type": "Organization"
+},
+"CodepediaOrg": {
+"loc": null,
+"name": "CodepediaOrg",
+"type": "Organization"
+},
+"Coders-Of-XDA-OT": {
+"loc": null,
+"name": "Coders of XDA-OT",
+"type": "Organization"
+},
+"CodingTrain": {
+"loc": null,
+"name": "Coding Train",
+"type": "Organization"
+},
+"CogStack": {
+"loc": null,
+"name": "CogStack",
+"type": "Organization"
+},
+"Covid-19Radar": {
+"loc": null,
+"name": "Project Covid19Radar",
+"type": "Organization"
+},
+"Cuperino": {
+"loc": "Puerto Rico",
+"name": "Javier O. Cordero P\u00e9rez",
+"type": "User"
+},
+"DEFRA": {
+"loc": "United Kingdom",
+"name": "Defra",
+"type": "Organization"
+},
+"DadosAbertosDeFeira": {
+"loc": "Feira de Santana, BA, Brasil",
+"name": "Dados Abertos de Feira",
+"type": "Organization"
+},
+"DataScienceResearchPeru": {
+"loc": "Lima, Per\u00fa",
+"name": "Data Science Research Peru",
+"type": "Organization"
+},
+"ESA-PhiLab": {
+"loc": null,
+"name": "ESA \u03a6-lab",
+"type": "Organization"
+},
+"ExpTechTW": {
+"loc": "Taiwan",
+"name": "ExpTech | \u63a2\u7d22\u79d1\u6280",
+"type": "Organization"
+},
+"FNNDSC": {
+"loc": "Boston, MA",
+"name": "FNNDSC / BCH",
+"type": "Organization"
+},
+"Fields2Cover": {
+"loc": "Netherlands",
+"name": "Fields2Cover",
+"type": "Organization"
+},
+"Freddywhest": {
+"loc": "404 - Not Found",
+"name": "Alfred Nti",
+"type": "User"
+},
+"GSA": {
+"loc": "1800 F Street NW, Washington DC 20405",
+"name": "U.S. General Services Administration",
+"type": "Organization"
+},
+"GeekyAnts": {
+"loc": "United States of America",
+"name": "GeekyAnts",
+"type": "Organization"
+},
+"Geonovum": {
+"loc": "Amersfoort - The Netherlands",
+"name": "Geonovum",
+"type": "Organization"
+},
+"GoogleChromeLabs": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"GoogleCloudPlatform": {
+"loc": null,
+"name": "Google Cloud Platform",
+"type": "Organization"
+},
+"Green-Software-Foundation": {
+"loc": null,
+"name": "Green Software Foundation",
+"type": "Organization"
+},
+"HDRUK": {
+"loc": "London",
+"name": "Health Data Research UK",
+"type": "Organization"
+},
+"HospitalRun": {
+"loc": "World",
+"name": "HospitalRun",
+"type": "Organization"
+},
+"IBM": {
+"loc": "United States of America",
+"name": "International Business Machines",
+"type": "Organization"
+},
+"IFRCGo": {
+"loc": "Geneva, Switzerland",
+"name": "GO",
+"type": "Organization"
+},
+"Ilyas-Codes": {
+"loc": null,
+"name": "Ilyas",
+"type": "User"
+},
+"ImperialCollegeLondon": {
+"loc": "United Kingdom",
+"name": "Imperial College London",
+"type": "Organization"
+},
+"J535D165": {
+"loc": "Netherlands",
+"name": "Jonathan de Bruin",
+"type": "User"
+},
+"JPHutchins": {
+"loc": "San Francisco, CA",
+"name": "JP Hutchins",
+"type": "User"
+},
+"JetBrains": {
+"loc": "Netherlands",
+"name": "JetBrains",
+"type": "Organization"
+},
+"JohnCoene": {
+"loc": "Switzerland",
+"name": "John Coene",
+"type": "User"
+},
+"Julian-Wyatt": {
+"loc": null,
+"name": "Julian Wyatt",
+"type": "User"
+},
+"LabinatorSolutions": {
+"loc": null,
+"name": "Labinator",
+"type": "User"
+},
+"Lightning-Universe": {
+"loc": "United States of America",
+"name": "Lightning-AI Universe",
+"type": "Organization"
+},
+"LukasKalbertodt": {
+"loc": "Heidelberg, Germany",
+"name": "Lukas Kalbertodt",
+"type": "User"
+},
+"M-Media-Group": {
+"loc": "South of France, France",
+"name": "M Media",
+"type": "Organization"
+},
+"MBadriNarayanan": {
+"loc": "Madison, Wisconsin",
+"name": "Badri Narayanan Murali Krishnan",
+"type": "User"
+},
+"McGillInnovation": {
+"loc": null,
+"name": "McGill Innovation Collective",
+"type": "Organization"
+},
+"MinecraftU": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"Msingi-AI": {
+"loc": "Kenya",
+"name": "MsingiAI",
+"type": "Organization"
+},
+"NSHipster": {
+"loc": "Portland, OR",
+"name": "NSHipster",
+"type": "Organization"
+},
+"Necrobot-Private": {
+"loc": null,
+"name": "Necrobot2",
+"type": "Organization"
+},
+"Niyiojeyinka": {
+"loc": "Lagos, Nigeria",
+"name": "Olaniyi Philip Ojeyinka ",
+"type": "User"
+},
+"Nokia-Bell-Labs": {
+"loc": null,
+"name": "Nokia Bell Labs",
+"type": "Organization"
+},
+"Omaroid": {
+"loc": "Paris",
+"name": "Omar Laraqui",
+"type": "User"
+},
+"OpenAgricultureFoundation": {
+"loc": "The world",
+"name": "Open Agriculture Foundation",
+"type": "Organization"
+},
+"OpenIIoT": {
+"loc": null,
+"name": "OpenIIoT",
+"type": "Organization"
+},
+"OperationCode": {
+"loc": "Portland, Oregon",
+"name": "Operation Code",
+"type": "Organization"
+},
+"PapillonApp": {
+"loc": "France",
+"name": "Papillon",
+"type": "Organization"
+},
+"PaxonHuang": {
+"loc": "Nanjing",
+"name": "LapinX\u80e1\u5fd8\u5e74\u7684\u968f\u673a\u68ee\u6797",
+"type": "User"
+},
+"Plant-for-the-Planet-org": {
+"loc": null,
+"name": "Plant-for-the-Planet",
+"type": "Organization"
+},
+"PourquoiEstTu": {
+"loc": null,
+"name": "pourquoi",
+"type": "User"
+},
+"ProtoSchool": {
+"loc": null,
+"name": "ProtoSchool",
+"type": "Organization"
+},
+"ProtonMail": {
+"loc": "Geneva, Switzerland",
+"name": "Proton Mail",
+"type": "Organization"
+},
+"Ralim": {
+"loc": "Sydney",
+"name": "Ben V. Brown",
+"type": "User"
+},
+"ReagentX": {
+"loc": null,
+"name": "Christopher Sardegna",
+"type": "User"
+},
+"RozhakLabs": {
+"loc": "Indonesia",
+"name": "RozhakLabs",
+"type": "Organization"
+},
+"SAP-archive": {
+"loc": "Walldorf, Germany",
+"name": "SAP Archive",
+"type": "Organization"
+},
+"Sunrisepeak": {
+"loc": "HangZhou/Beijing",
+"name": "SPeak",
+"type": "User"
+},
+"SwiftEducation": {
+"loc": null,
+"name": "Swift Education (Deprecated)",
+"type": "Organization"
+},
+"TEALSK12": {
+"loc": "United States of America",
+"name": "TEALS",
+"type": "Organization"
+},
+"Tachionstrahl": {
+"loc": "Germany",
+"name": "Marius",
+"type": "User"
+},
+"Tanaguru": {
+"loc": "Paris, France",
+"name": "Tanaguru",
+"type": "Organization"
+},
+"TechCiel": {
+"loc": "Canada",
+"name": "Ciel",
+"type": "User"
+},
+"TheanYeeSin": {
+"loc": "Malaysia",
+"name": "\u272aMrYS",
+"type": "User"
+},
+"Tokyo-Metro-Gov": {
+"loc": "Japan",
+"name": "Tokyo Metropolitan Government",
+"type": "Organization"
+},
+"ToluClassics": {
+"loc": "AOE",
+"name": "Toluclassics",
+"type": "User"
+},
+"VectorInstitute": {
+"loc": "Toronto, ON, CA",
+"name": "Vector Institute",
+"type": "Organization"
+},
+"VekotinVerstas": {
+"loc": "Finland, Helsinki",
+"name": "Vekotinverstas",
+"type": "Organization"
+},
+"Votee-AI": {
+"loc": "Hong Kong",
+"name": "Votee AI",
+"type": "Organization"
+},
+"WWDCNotes": {
+"loc": null,
+"name": "WWDC Notes",
+"type": "Organization"
+},
+"WangRongsheng": {
+"loc": "ShenZhen,China",
+"name": null,
+"type": "User"
+},
+"WorldHealthOrganization": {
+"loc": "Geneva, Switzerland",
+"name": "World Health Organization",
+"type": "Organization"
+},
+"YACS-RCOS": {
+"loc": "Rensselaer Polytechnic Institute",
+"name": "YACS",
+"type": "Organization"
+},
+"YangDai2003": {
+"loc": "M\u00fcnchen, Deutschland",
+"name": "Yang Dai",
+"type": "User"
+},
+"a3r0id": {
+"loc": "Northern California, USA",
+"name": "Chad G.",
+"type": "User"
+},
+"ably-labs": {
+"loc": "London, United Kingdom",
+"name": "Ably Labs",
+"type": "Organization"
+},
+"adafruit": {
+"loc": "New york city",
+"name": "Adafruit Industries",
+"type": "Organization"
+},
+"adeira": {
+"loc": null,
+"name": "Adeira",
+"type": "Organization"
+},
+"adityaoberai": {
+"loc": "Bengaluru, India",
+"name": "Aditya Oberai",
+"type": "User"
+},
+"agallio": {
+"loc": "Indonesia",
+"name": "Agallio Samai",
+"type": "User"
+},
+"agilescientific": {
+"loc": "Canada",
+"name": "Agile*",
+"type": "Organization"
+},
+"ahkohd": {
+"loc": "London, UK",
+"name": "Victor Aremu",
+"type": "User"
+},
+"ambulatorium": {
+"loc": null,
+"name": "Ambulatorium",
+"type": "Organization"
+},
+"amodm": {
+"loc": "\u2601\ufe0f",
+"name": "Amod Malviya",
+"type": "User"
+},
+"anitab-org": {
+"loc": "Global",
+"name": "AnitaB.org Open Source",
+"type": "Organization"
+},
+"apache": {
+"loc": null,
+"name": "The Apache Software Foundation",
+"type": "Organization"
+},
+"appt-org": {
+"loc": "The Netherlands",
+"name": "Appt Foundation",
+"type": "Organization"
+},
+"arduino": {
+"loc": null,
+"name": "Arduino",
+"type": "Organization"
+},
+"aws-samples": {
+"loc": null,
+"name": "AWS Samples",
+"type": "Organization"
+},
+"aws-solutions": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"awslabs": {
+"loc": "Seattle, WA",
+"name": "Amazon Web Services - Labs",
+"type": "Organization"
+},
+"ayoisaiah": {
+"loc": "Abuja, Nigeria",
+"name": "Ayooluwa Isaiah",
+"type": "User"
+},
+"b2ihealthcare": {
+"loc": "Hungary",
+"name": "B2i Healthcare, an IQVIA business",
+"type": "Organization"
+},
+"babieiev": {
+"loc": null,
+"name": "Oleksandr Babieiev",
+"type": "User"
+},
+"bernhardfritz": {
+"loc": "Austria",
+"name": "Bernhard Fritz",
+"type": "User"
+},
+"bilelomrani1": {
+"loc": "Paris, France",
+"name": "Bilel Omrani",
+"type": "User"
+},
+"bodrovis": {
+"loc": "Riga",
+"name": "Elijah S. Krukowski",
+"type": "User"
+},
+"brunonova": {
+"loc": null,
+"name": "Bruno Nova",
+"type": "User"
+},
+"cakraawijaya": {
+"loc": "Indonesia",
+"name": "Devan Cakra Mudra Wijaya",
+"type": "User"
+},
+"campuspress": {
+"loc": null,
+"name": "CampusPress",
+"type": "Organization"
+},
+"canada-ca": {
+"loc": "Canada",
+"name": "Government of Canada - Gouvernement du Canada",
+"type": "Organization"
+},
+"cartesapp": {
+"loc": "France",
+"name": "Cartes",
+"type": "Organization"
+},
+"ccodwg": {
+"loc": null,
+"name": "COVID-19 Canada Open Data Working Group",
+"type": "Organization"
+},
+"cd011": {
+"loc": null,
+"name": "Chathura Dissanayake",
+"type": "User"
+},
+"cehfisher": {
+"loc": null,
+"name": "Carie Fisher",
+"type": "User"
+},
+"chakra-ui": {
+"loc": "https://opencollective.com/chakra-ui",
+"name": "Chakra",
+"type": "Organization"
+},
+"chanzuckerberg": {
+"loc": "United States of America",
+"name": "Chan Zuckerberg Initiative",
+"type": "Organization"
+},
+"codeforlife-education": {
+"loc": "United Kingdom",
+"name": "Code for Life",
+"type": "Organization"
+},
+"computeruseprotocol": {
+"loc": null,
+"name": "Computer Use Protocol",
+"type": "Organization"
+},
+"corona-warn-app": {
+"loc": null,
+"name": "Corona-Warn-App",
+"type": "Organization"
+},
+"cosmos": {
+"loc": null,
+"name": "COSMOS",
+"type": "Organization"
+},
+"covidatlas": {
+"loc": null,
+"name": "COVID Atlas",
+"type": "Organization"
+},
+"cpcloud": {
+"loc": null,
+"name": "Phillip Cloud",
+"type": "User"
+},
+"d4l-data4life": {
+"loc": null,
+"name": "D4L data4life gGmbH",
+"type": "Organization"
+},
+"dcbark01": {
+"loc": "Houston, TX",
+"name": "Daniel Barker",
+"type": "User"
+},
+"deepset-ai": {
+"loc": "Germany",
+"name": "deepset",
+"type": "Organization"
+},
+"devarthurribeiro": {
+"loc": "Natal-RN",
+"name": "Arthur Ribeiro",
+"type": "User"
+},
+"dhlife09": {
+"loc": "South Korea",
+"name": "Dohyun Park",
+"type": "User"
+},
+"dstotijn": {
+"loc": "Amsterdam, The Netherlands",
+"name": "David Stotijn",
+"type": "User"
+},
+"duetds": {
+"loc": "Finland",
+"name": "Duet Design System",
+"type": "Organization"
+},
+"dunglas": {
+"loc": "Lille, France",
+"name": "K\u00e9vin Dunglas",
+"type": "User"
+},
+"eBay": {
+"loc": null,
+"name": "eBay",
+"type": "Organization"
+},
+"eknoes": {
+"loc": "G\u00f6ttingen, Germany",
+"name": "S\u00f6nke",
+"type": "User"
+},
+"electricitymaps": {
+"loc": "Denmark",
+"name": "Electricity Maps",
+"type": "Organization"
+},
+"erbilnas": {
+"loc": "Istanbul, Turkey",
+"name": "Erbil",
+"type": "User"
+},
+"facebookresearch": {
+"loc": "Menlo Park, California",
+"name": "Meta Research",
+"type": "Organization"
+},
+"fastenhealth": {
+"loc": "United States of America",
+"name": "Fasten Health",
+"type": "Organization"
+},
+"feross": {
+"loc": "Stanford, CA",
+"name": "Feross Aboukhadijeh",
+"type": "User"
+},
+"filamentgroup": {
+"loc": "Boston, MA",
+"name": "Filament Group",
+"type": "Organization"
+},
+"fluttercandies": {
+"loc": "China",
+"name": "FlutterCandies",
+"type": "Organization"
+},
+"galaxyproject": {
+"loc": null,
+"name": "Galaxy Project",
+"type": "Organization"
+},
+"georgezhao2010": {
+"loc": "Beijing, China",
+"name": "George Zhao",
+"type": "User"
+},
+"getify": {
+"loc": "Austin, TX",
+"name": "Kyle Simpson",
+"type": "User"
+},
+"gitcoinco": {
+"loc": "Cayman Islands",
+"name": "Gitcoin",
+"type": "Organization"
+},
+"github": {
+"loc": "United States of America",
+"name": "GitHub",
+"type": "Organization"
+},
+"github-education-resources": {
+"loc": null,
+"name": "GitHub Education",
+"type": "Organization"
+},
+"globalcitizen": {
+"loc": null,
+"name": "globalcitizen",
+"type": "User"
+},
+"google": {
+"loc": "United States of America",
+"name": "Google",
+"type": "Organization"
+},
+"googlearchive": {
+"loc": null,
+"name": "Google Archive",
+"type": "Organization"
+},
+"googlecodelabs": {
+"loc": null,
+"name": "Google Codelabs",
+"type": "Organization"
+},
+"googlecreativelab": {
+"loc": null,
+"name": "Google Creative Lab",
+"type": "Organization"
+},
+"govau": {
+"loc": "Canberra and Sydney, Australia",
+"name": "Digital Transformation Agency",
+"type": "Organization"
+},
+"gradienthealth": {
+"loc": "United States of America",
+"name": "Gradient Health",
+"type": "Organization"
+},
+"hackclub": {
+"loc": "Your High School",
+"name": "Hack Club",
+"type": "Organization"
+},
+"hiroppy": {
+"loc": "Tokyo / Japan",
+"name": "Yuta Hiroto",
+"type": "User"
+},
+"holtwick": {
+"loc": "M\u00fclheim an der Ruhr, Europe \ud83c\uddea\ud83c\uddfa",
+"name": "Dirk Holtwick",
+"type": "User"
+},
+"hope-ui": {
+"loc": "France",
+"name": "Hope",
+"type": "Organization"
+},
+"hpi-schul-cloud": {
+"loc": "Germany",
+"name": "Schulcloud-Verbund",
+"type": "Organization"
+},
+"hrshadhin": {
+"loc": "Bangladesh",
+"name": "H.R. Shadhin",
+"type": "User"
+},
+"hyperledger-labs": {
+"loc": "United States of America",
+"name": "Hyperledger Labs",
+"type": "Organization"
+},
+"hzexe": {
+"loc": "\u4e2d\u56fd",
+"name": "Dian Ritonga",
+"type": "User"
+},
+"igromanru": {
+"loc": null,
+"name": "Igromanru",
+"type": "User"
+},
+"immuni-app": {
+"loc": "Italy",
+"name": "Immuni - Commissario straordinario per l'emergenza Covid-19",
+"type": "Organization"
+},
+"indeedeng": {
+"loc": null,
+"name": "Indeed Engineering",
+"type": "Organization"
+},
+"jabardigitalservice": {
+"loc": "Bandung, West Java, Indonesia",
+"name": "Jabar Digital Service",
+"type": "Organization"
+},
+"jad-haddad": {
+"loc": "France",
+"name": "Jad Haddad",
+"type": "User"
+},
+"jakejarvis": {
+"loc": "Boston, MA",
+"name": "Jake Jarvis",
+"type": "User"
+},
+"jarrodwatts": {
+"loc": "Sydney, Australia",
+"name": "Jarrod Watts",
+"type": "User"
+},
+"jgarber623": {
+"loc": null,
+"name": "Jason Garber",
+"type": "User"
+},
+"jisungk": {
+"loc": "USA",
+"name": "Ji-Sung Kim",
+"type": "User"
+},
+"jmcastagnetto": {
+"loc": "Peru",
+"name": "Jesus M. Castagnetto",
+"type": "User"
+},
+"johannschopplich": {
+"loc": "Leipzig, Germany",
+"name": "Johann Schopplich",
+"type": "User"
+},
+"jsgonsette": {
+"loc": "Belgium",
+"name": "Jean-S\u00e9bastien Gonsette",
+"type": "User"
+},
+"jshmrtn": {
+"loc": "Switzerland",
+"name": "JOSHMARTIN",
+"type": "Organization"
+},
+"jxnblk": {
+"loc": "New York City",
+"name": "Brent Jackson",
+"type": "User"
+},
+"kantord": {
+"loc": "Barcelona",
+"name": "D\u00e1niel K\u00e1ntor",
+"type": "User"
+},
+"kerala-blockchain-academy": {
+"loc": "Thiruvananthapuram",
+"name": "Kerala Blockchain Academy",
+"type": "Organization"
+},
+"launchdarkly": {
+"loc": "Oakland, CA",
+"name": "LaunchDarkly",
+"type": "Organization"
+},
+"learn-awesome": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"leereilly": {
+"loc": "San Francisco, CA",
+"name": "Lee Reilly",
+"type": "User"
+},
+"lewangdev": {
+"loc": null,
+"name": "LE",
+"type": "User"
+},
+"liip": {
+"loc": "Switzerland",
+"name": "Liip",
+"type": "Organization"
+},
+"limitedeternity": {
+"loc": "Russia, Saint Petersburg",
+"name": "Vyacheslav Bespalov",
+"type": "User"
+},
+"lowlighter": {
+"loc": "\ud83c\uddeb\ud83c\uddf7 / \ud83c\udde8\ud83c\udde6 (QC)",
+"name": "Simon Lecoq",
+"type": "User"
+},
+"makers-for-life": {
+"loc": "France",
+"name": "Makers For Life \u2014 Open Source Ventilator",
+"type": "Organization"
+},
+"mapbox": {
+"loc": "Washington DC",
+"name": "Mapbox",
+"type": "Organization"
+},
+"mapswipe": {
+"loc": "London, UK",
+"name": "MapSwipe",
+"type": "Organization"
+},
+"mediacloud": {
+"loc": null,
+"name": "Media Cloud",
+"type": "Organization"
+},
+"menthorlabs": {
+"loc": "Brazil",
+"name": "Menthor",
+"type": "Organization"
+},
+"merlinschumacher": {
+"loc": "Hannover, Germany",
+"name": "Merlin Schumacher",
+"type": "User"
+},
+"mhansen": {
+"loc": "Sydney, Australia",
+"name": "Mark Hansen",
+"type": "User"
+},
+"microsoft": {
+"loc": "Redmond, WA",
+"name": "Microsoft",
+"type": "Organization"
+},
+"midudev": {
+"loc": "Barcelona",
+"name": "Miguel \u00c1ngel Dur\u00e1n",
+"type": "User"
+},
+"minerva-ml": {
+"loc": "Worldwide",
+"name": "minerva.ml",
+"type": "Organization"
+},
+"minvws": {
+"loc": "Netherlands",
+"name": "Ministerie van Volksgezondheid, Welzijn en Sport",
+"type": "Organization"
+},
+"mozilla": {
+"loc": "Mountain View, California",
+"name": "Mozilla",
+"type": "Organization"
+},
+"mu-editor": {
+"loc": null,
+"name": "Mu",
+"type": "Organization"
+},
+"mysociety": {
+"loc": "UK",
+"name": "mySociety",
+"type": "Organization"
+},
+"neemakot": {
+"loc": "United Kingdom",
+"name": "Neema Kotonya",
+"type": "User"
+},
+"neet": {
+"loc": null,
+"name": "Ry\u014d Igarashi (\u4e94\u5341\u5d50 \u6dbc)",
+"type": "User"
+},
+"negrel": {
+"loc": null,
+"name": null,
+"type": "User"
+},
+"neherlab": {
+"loc": "Basel, Switzerland",
+"name": "neherlab",
+"type": "Organization"
+},
+"neuml": {
+"loc": "Washington, DC Metro",
+"name": "NeuML",
+"type": "Organization"
+},
+"nevrome": {
+"loc": "Leipzig (Germany)",
+"name": "Clemens Schmid",
+"type": "User"
+},
+"newsdev": {
+"loc": null,
+"name": "NYT Newsroom Developers",
+"type": "Organization"
+},
+"nlpie": {
+"loc": "Minneapolis, MN",
+"name": "Natural Language Processing / Information Extraction (NLP/IE) Program",
+"type": "Organization"
+},
+"noodle-run": {
+"loc": "United Kingdom",
+"name": "Noodle",
+"type": "Organization"
+},
+"novoda": {
+"loc": "Multiple Locations",
+"name": "Novoda",
+"type": "Organization"
+},
+"novoic": {
+"loc": "London, UK",
+"name": "Novoic",
+"type": "Organization"
+},
+"nrkno": {
+"loc": "Marienlyst, Oslo, Norway",
+"name": "Norsk rikskringkasting (NRK)",
+"type": "Organization"
+},
+"nychealth": {
+"loc": "New York, NY",
+"name": "NYC Department of Health and Mental Hygiene",
+"type": "Organization"
+},
+"olhoneles": {
+"loc": "Belo Horizonte, MG, Brazil",
+"name": "OlhoNeles.org",
+"type": "Organization"
+},
+"openedx-unsupported": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"openfarmcc": {
+"loc": "Earth",
+"name": "OpenFarm",
+"type": "Organization"
+},
+"owid": {
+"loc": "United Kingdom",
+"name": "Our World in Data",
+"type": "Organization"
+},
+"panghaibin": {
+"loc": null,
+"name": "Pang.HB",
+"type": "User"
+},
+"parnoldx": {
+"loc": null,
+"name": "Peter Arnold",
+"type": "User"
+},
+"pgracio": {
+"loc": "Sweden",
+"name": "Paulo Gr\u00e1cio",
+"type": "User"
+},
+"philipptrenz": {
+"loc": "Groningen, NL",
+"name": "Philipp Trenz",
+"type": "User"
+},
+"processing": {
+"loc": "Boston, New York, Los Angeles, Worldwide",
+"name": "Processing Foundation",
+"type": "Organization"
+},
+"pyronear": {
+"loc": "Paris",
+"name": "PyroNear",
+"type": "Organization"
+},
+"ratschlab": {
+"loc": "ETH Zurich",
+"name": "Biomedical Informatics at ETH Zurich",
+"type": "Organization"
+},
+"redpwn": {
+"loc": null,
+"name": "redpwn",
+"type": "Organization"
+},
+"reichlab": {
+"loc": "Amherst, MA",
+"name": "The Reich Lab at UMass-Amherst",
+"type": "Organization"
+},
+"robmarkcole": {
+"loc": "London, UK",
+"name": "Robin Cole",
+"type": "User"
+},
+"ropensci-archive": {
+"loc": null,
+"name": "rOpenSci Archive",
+"type": "Organization"
+},
+"ros-agriculture": {
+"loc": "Earth",
+"name": "Robot Agriculture",
+"type": "Organization"
+},
+"ryo-ma": {
+"loc": "Tokyo, Japan",
+"name": "ryo-ma",
+"type": "User"
+},
+"saasify-sh": {
+"loc": "Brooklyn, NY",
+"name": "Saasify",
+"type": "Organization"
+},
+"sagefy": {
+"loc": "Portland, OR",
+"name": "Sagefy",
+"type": "Organization"
+},
+"sciosense": {
+"loc": "Netherlands",
+"name": "Sciosense",
+"type": "Organization"
+},
+"scottaohara": {
+"loc": "MA",
+"name": "Scott O'Hara",
+"type": "User"
+},
+"se-edu": {
+"loc": null,
+"name": "Software Engineering Education - FOSS Resources",
+"type": "Organization"
+},
+"seandlg": {
+"loc": "Berlin, Germany",
+"name": "Sean",
+"type": "User"
+},
+"shopwareDowntown": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"skwallace36": {
+"loc": "Washington, D.C.",
+"name": "Stuart Wallace",
+"type": "User"
+},
+"skydoves": {
+"loc": "Digital Nomad",
+"name": "Jaewoong Eum",
+"type": "User"
+},
+"sociepy": {
+"loc": "Barcelona, Catalonia, Spain",
+"name": "sociepy",
+"type": "Organization"
+},
+"solarcaratuva": {
+"loc": "University of Virginia",
+"name": null,
+"type": "Organization"
+},
+"sozialhelden": {
+"loc": "Berlin, Germany",
+"name": "Sozialhelden",
+"type": "Organization"
+},
+"stop-covid19-hyogo": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"supermamon": {
+"loc": "Singapore",
+"name": "Raymond Velasquez",
+"type": "User"
+},
+"thatcherclough": {
+"loc": "New York, New York",
+"name": "Thatcher Clough",
+"type": "User"
+},
+"the-robot": {
+"loc": "Singapore",
+"name": "khant",
+"type": "User"
+},
+"theappbusiness": {
+"loc": "London",
+"name": "Kin + Carta Europe",
+"type": "Organization"
+},
+"thesandarson": {
+"loc": "India",
+"name": "San Darson",
+"type": "User"
+},
+"thoughtworks": {
+"loc": "Global",
+"name": "Thoughtworks",
+"type": "Organization"
+},
+"timbocgn": {
+"loc": "Cologne / Germany",
+"name": "Tim Hagemann",
+"type": "User"
+},
+"timreibe": {
+"loc": "Stuttgart, Germany",
+"name": "Tim Reibe",
+"type": "User"
+},
+"trvrnrth": {
+"loc": "Bath, UK",
+"name": "Trevor North",
+"type": "User"
+},
+"turnoffthelights": {
+"loc": "Antwerpen, Belgium",
+"name": "Turn Off the Lights",
+"type": "Organization"
+},
+"unicef": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"usds": {
+"loc": "USA",
+"name": "U.S. Digital Service",
+"type": "Organization"
+},
+"usetania": {
+"loc": "Estonia",
+"name": "Tania",
+"type": "Organization"
+},
+"vicocotea": {
+"loc": null,
+"name": "Vico",
+"type": "User"
+},
+"villares": {
+"loc": "S\u00e3o Paulo",
+"name": "Alexandre B A Villares",
+"type": "User"
+},
+"vmarcosp": {
+"loc": "Anywhere",
+"name": "Marcos Oliveira",
+"type": "User"
+},
+"vmmc2": {
+"loc": "Recife, Brazil",
+"name": "Victor Miguel de Morais Costa",
+"type": "User"
+},
+"vmware-archive": {
+"loc": "Palo Alto, CA",
+"name": "VMware Archive",
+"type": "Organization"
+},
+"vmware-clarity": {
+"loc": "United States of America",
+"name": "VMware Clarity",
+"type": "Organization"
+},
+"w3c-cg": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
+"wirekang": {
+"loc": null,
+"name": null,
+"type": "User"
+},
+"wobsoriano": {
+"loc": null,
+"name": "Robert Soriano",
+"type": "User"
+},
+"xspanger3770": {
+"loc": null,
+"name": "Bc. Jakub \u0160panger",
+"type": "User"
+},
+"yahoo": {
+"loc": " We're working from home these days. Stay safe.",
+"name": "Yahoo",
+"type": "Organization"
+},
+"ynshung": {
+"loc": "Malaysia",
+"name": "Young Shung",
+"type": "User"
+},
+"zmievsa": {
+"loc": "Tbilisi",
+"name": "Stanislav Zmiev",
+"type": "User"
+},
+"zoonk": {
+"loc": null,
+"name": "Zoonk",
+"type": "Organization"
+}
+}

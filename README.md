@@ -12,7 +12,7 @@
 | 3 | **The world's unfinished work** | violet rings, sized by stars | GitHub search for archived repositories on real-world topics, placed at the owner's public profile location (geocoded with Photon / OSM) | Repository metadata, linked |
 | 4 | **Everything we're stuck on** | stars in the sky around the globe (a problem is not a place); quiet ones glow | Daily sky published by [stuck-on](https://github.com/mhccog/stuck-on) | per source, see that repo |
 | 5 | **Leftovers and missing pieces** | coral boxes | OpenStreetMap via Overpass: give boxes, community fridges / food sharing, free shops, tool libraries, repair cafés | ODbL 1.0 |
-| ✦ | **Gold threads** | gold arcs, and gold lines from a star down to the ground | `scripts/build_links.py`: conservative cross-layer matches, each with a written reason | – |
+| ✦ | **Common threads** | bright white-gold arcs, and lines from a star down to the ground | `scripts/build_links.py`: conservative cross-layer matches, each with a written reason | – |
 
 ## Honesty rules
 - Every mark is a real public record and links to it. Nothing is invented.

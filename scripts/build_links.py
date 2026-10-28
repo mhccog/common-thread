@@ -22,7 +22,8 @@ def main():
     links = []
 
     def add(a, b, title, why, method, score):
-        links.append({'id': f'lk{len(links) + 1}', 'a': a, 'b': b, 'title': title, 'why': why, 'method': method, 'score': round(score, 3)})
+        import hashlib
+        links.append({'id': 'lk' + hashlib.sha1((a + '|' + b).encode()).hexdigest()[:10], 'a': a, 'b': b, 'title': title, 'why': why, 'method': method, 'score': round(score, 3)})
 
     # corpus for TF-IDF across everything
     docs, refs = [], []
@@ -38,11 +39,21 @@ def main():
     V = {id(o): vecs[i] for i, (_, o) in enumerate(refs)}
 
     # 1. A stuck-on problem and teams converging on it now (p4 <-> p1)
+    GENERIC = {'language', 'languages', 'early', 'detection', 'detecting', 'water', 'cities', 'solar', 'resistance', 'disease', 'cheap', 'model', 'models', 'sensors', 'screening', 'finding', 'keeping', 'spotting', 'seeing', 'hearing', 'translating', 'recycling'}
+    seen = set()
     for cv in convs:
-        best = max(((cos(V[id(cv)], V[id(p)]), p) for p in probs), key=lambda x: x[0], default=(0, None))
-        if best[1] and best[0] >= 0.28 and len(shared_terms(V[id(cv)], V[id(best[1])], 6)) >= 3:
-            p = best[1]
-            add(p['id'], cv['id'], f"Stuck on it, and converging on it", f"A paper or list calls this open: “{p['title'][:140]}” Meanwhile, independent teams are working on {cv['topic'].lower()}. Shared words: {', '.join(shared_terms(V[id(cv)], V[id(p)]))}.", 'shared words (TF-IDF)', best[0])
+        core = [t for t in tokens(cv['topic'] + ' ' + (cv.get('query') or '')) if t not in GENERIC and len(t) >= 6]
+        for p in probs:
+            if len(p['title'].split()) < 4:
+                continue
+            sc = cos(V[id(cv)], V[id(p)])
+            if sc < 0.24:
+                continue
+            sh = shared_terms(V[id(cv)], V[id(p)], 6)
+            if len(sh) >= 2 and any(t[:6] == c[:6] for t in sh for c in core) and (p['id'], cv['topic']) not in seen:
+                seen.add((p['id'], cv['topic']))
+                who = 'A recent paper says this is still open' if p.get('source') == 'openalex' else f"{p['sourceName'].split('·')[0].strip()} lists this as open"
+                add(p['id'], cv['id'], 'Stuck on it, and converging on it', f"{who}: “{p['title'][:150]}” Meanwhile, independent teams are working on {cv['topic'].lower()}. Shared words: {', '.join(sh[:4])}.", 'shared words (TF-IDF) including the topic itself', sc)
 
     # 2. An abandoned attempt at a problem teams are converging on now (p3 <-> p1)
     by_topic = {}
@@ -54,11 +65,11 @@ def main():
                 continue
             cv = max(by_topic[t], key=lambda x: cos(V[id(r)], V[id(x)]))
             sc = cos(V[id(r)], V[id(cv)])
-            if sc >= 0.12:
+            if sc >= 0.2:
                 add(r['id'], cv['id'], 'An earlier attempt, set down', f"{r['title']} tackled {t.lower()} and was archived; its last code was in {r['stopped'][:4]}. Today, independent teams are working on the same problem again.", 'same search topic, archived repository', sc)
 
     # 3. An abandoned project aimed at a listed open problem (p3 <-> p4): the problem's short name appears in the repo
-    named = [p for p in probs if p.get('query') and len(p['query']) >= 8]
+    named = [p for p in probs if p.get('query') and (len(p['query'].split()) >= 2 or len(p['query']) >= 14) and len(p['title'].split()) >= 3]
     for r in repos:
         text = (r['desc'] + ' ' + r['title'] + ' ' + ' '.join(r['topics'])).lower()
         for p in named:
@@ -84,12 +95,13 @@ def main():
     for k in cases:
         text = (k['title'] + ' ' + k['desc'] + ' ' + k.get('problem', '')).lower()
         for kind, rx in kinds.items():
-            if not re.search(rx, text):
+            mt = re.search(rx, text)
+            if not mt:
                 continue
             near = min(((km((k['lon'], k['lat']), (p['lon'], p['lat'])), p) for p in pts if p['kind'] == kind), key=lambda x: x[0], default=(1e9, None))
             if near[1] and near[0] <= 25:
                 label = (lo.get('meta', {}).get('kinds', {}).get(kind, {}).get('label') or kind).lower()
-                add(near[1]['id'], k['id'], 'Leftovers, near a place that worked on it', f"A {label} sits {near[0]:.0f} km from where “{k['title']}” worked on the same thing in {k['place']}.", 'same subject and within 25 km', 1 - near[0] / 25)
+                add(near[1]['id'], k['id'], 'Leftovers, near a place that worked on it', f"A {label} sits {max(near[0], 0.1):.1f} km from where “{k['title']}” in {k['place']} took on “{mt.group(0)}”.", 'same subject and within 25 km', 1 - near[0] / 25)
                 break
 
     links.sort(key=lambda l: -l['score'])

@@ -3,7 +3,7 @@ people leave what they have spare for whoever needs it. Only the offer side is o
 import json, time, datetime, urllib.parse
 from common import get, write_json, read_json, clip
 
-OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter']
+OVERPASS = ['https://maps.mail.ru/osm/tools/overpass/api/interpreter', 'https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter']
 KINDS = [
     ('give_box', 'nwr["amenity"="give_box"]', 'Give box', 'A small shelter where anyone can leave things they no longer need, and anyone can take them.'),
     ('food_sharing', 'nwr["amenity"="food_sharing"]', 'Community fridge / food sharing', 'Surplus food left for anyone to take.'),
@@ -27,6 +27,7 @@ def overpass(q):
 def main():
     prev = {i['id']: i for i in (read_json('leftovers.json') or {}).get('items', [])}
     items, counts, notes = [], {}, []
+    osm_base = [None]
     for kind, q, label, blurb in KINDS:
         try:
             d = overpass(q)
@@ -36,6 +37,9 @@ def main():
             notes.append(f'{label}: OpenStreetMap query failed this run, kept {len(old)} from the previous build.')
             continue
         n = 0
+        base = (d.get('osm3s') or {}).get('timestamp_osm_base')
+        if base and (not osm_base[0] or base < osm_base[0]):
+            osm_base[0] = base
         for el in d.get('elements', []):
             lat = el.get('lat') or (el.get('center') or {}).get('lat'); lon = el.get('lon') or (el.get('center') or {}).get('lon')
             if lat is None:
@@ -53,7 +57,7 @@ def main():
         time.sleep(5)
     write_json('leftovers.json', {'meta': {'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'count': len(items), 'counts': counts,
                                            'kinds': {k: {'label': l, 'blurb': b} for k, _, l, b in KINDS},
-                                           'source': 'OpenStreetMap via Overpass', 'licence': 'ODbL 1.0',
+                                           'source': 'OpenStreetMap via Overpass', 'osmBase': osm_base[0], 'licence': 'ODbL 1.0',
                                            'status': {'ok': not notes, 'note': ' '.join(notes)}}, 'items': items})
 
 

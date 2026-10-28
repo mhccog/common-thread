@@ -1,0 +1,715 @@
+{
+"179 nations and growing": {
+"country": "CM",
+"label": "Food and Agriculture Organisation of the United Nations, Cameroon",
+"lat": 3.893,
+"lon": 11.514,
+"precision": "city"
+},
+"1800 f street nw, washington dc 20405": {
+"country": "US",
+"label": "U.S. Kids, United States",
+"lat": 38.897,
+"lon": -77.043,
+"precision": "city"
+},
+"404 - not found": {
+"country": "JP",
+"label": "404 Not Found, Japan",
+"lat": 34.699,
+"lon": 135.501,
+"precision": "city"
+},
+"abuja, nigeria": {
+"country": "NG",
+"label": "Abuja, Nigeria",
+"lat": 9.064,
+"lon": 7.489,
+"precision": "city"
+},
+"amersfoort - the netherlands": {
+"country": "NL",
+"label": "A Mountain in the Netherlands, Netherlands",
+"lat": 52.193,
+"lon": 5.421,
+"precision": "city"
+},
+"amherst, ma": {
+"country": "US",
+"label": "Amherst, United States",
+"lat": 42.373,
+"lon": -72.52,
+"precision": "city"
+},
+"amsterdam, the netherlands": {
+"country": "NL",
+"label": "The National Maritime Museum, Netherlands",
+"lat": 52.372,
+"lon": 4.915,
+"precision": "city"
+},
+"antwerpen, belgium": {
+"country": "BE",
+"label": "Antwerp, Belgium",
+"lat": 51.221,
+"lon": 4.4,
+"precision": "city"
+},
+"anywhere": {
+"country": "VN",
+"label": "Anywhere, Vietnam",
+"lat": 16.039,
+"lon": 108.222,
+"precision": "city"
+},
+"aoe": {
+"country": "IT",
+"label": "Aosta Valley, Italy",
+"lat": 45.73,
+"lon": 7.387,
+"precision": "region"
+},
+"athens, greece": {
+"country": "GR",
+"label": "Athens, Greece",
+"lat": 37.976,
+"lon": 23.735,
+"precision": "city"
+},
+"austin, tx": {
+"country": "US",
+"label": "Austin, United States",
+"lat": 30.265,
+"lon": -97.747,
+"precision": "city"
+},
+"baltimore, md": {
+"country": "US",
+"label": "Baltimore, United States",
+"lat": 39.291,
+"lon": -76.611,
+"precision": "city"
+},
+"bandung, west java, indonesia": {
+"country": "ID",
+"label": "Bandung, Indonesia",
+"lat": -6.922,
+"lon": 107.607,
+"precision": "city"
+},
+"bangalore": {
+"country": "IN",
+"label": "Bengaluru, India",
+"lat": 12.977,
+"lon": 77.59,
+"precision": "city"
+},
+"barcelona": {
+"country": "ES",
+"label": "Barcelona, Spain",
+"lat": 41.383,
+"lon": 2.177,
+"precision": "city"
+},
+"barcelona, catalonia, spain": {
+"country": "ES",
+"label": "Barcelona, Spain",
+"lat": 41.383,
+"lon": 2.177,
+"precision": "city"
+},
+"basel, switzerland": {
+"country": "CH",
+"label": "Basel, Switzerland",
+"lat": 47.558,
+"lon": 7.588,
+"precision": "city"
+},
+"bath, uk": {
+"country": "GB",
+"label": "HSBC UK, United Kingdom",
+"lat": 51.379,
+"lon": -2.36,
+"precision": "city"
+},
+"beijing, china": {
+"country": "CN",
+"label": "Beijing, China",
+"lat": 39.906,
+"lon": 116.391,
+"precision": "city"
+},
+"belo horizonte, mg, brazil": {
+"country": "BR",
+"label": "Belo Horizonte, Brazil",
+"lat": -19.923,
+"lon": -43.945,
+"precision": "city"
+},
+"bengaluru, india": {
+"country": "IN",
+"label": "Bengaluru, India",
+"lat": 12.977,
+"lon": 77.59,
+"precision": "city"
+},
+"berlin, germany": {
+"country": "DE",
+"label": "Berlin, Germany",
+"lat": 52.517,
+"lon": 13.395,
+"precision": "city"
+},
+"berlin, germay": {
+"country": "DE",
+"label": "Berlin, Germany",
+"lat": 52.517,
+"lon": 13.395,
+"precision": "city"
+},
+"boston, ma": {
+"country": "US",
+"label": "Boston, United States",
+"lat": 42.359,
+"lon": -71.058,
+"precision": "city"
+},
+"boston, massachusetts, usa": {
+"country": "US",
+"label": "WBIX-AM Nossa Radio Boston, United States",
+"lat": 42.382,
+"lon": -71.085,
+"precision": "city"
+},
+"boston, new york, los angeles, worldwide": null,
+"brooklyn, ny": {
+"country": "US",
+"label": "Brooklyn, United States",
+"lat": 40.653,
+"lon": -73.95,
+"precision": "city"
+},
+"canberra and sydney, australia": {
+"country": "AU",
+"label": "Canberra Museum and Gallery, Australia",
+"lat": -35.281,
+"lon": 149.131,
+"precision": "city"
+},
+"cayman islands": {
+"country": "KY",
+"label": "Cayman Islands",
+"lat": 19.703,
+"lon": -79.917,
+"precision": "country"
+},
+"cologne / germany": {
+"country": "DE",
+"label": "Cologne, Germany",
+"lat": 50.938,
+"lon": 6.96,
+"precision": "city"
+},
+"digital nomad": {
+"country": "TR",
+"label": "Nest digital nomad house, Turkey",
+"lat": 40.993,
+"lon": 29.03,
+"precision": "city"
+},
+"esa ecsat, harwell, uk": null,
+"eth zurich": {
+"country": "CH",
+"label": "ETH Zürich, Hönggerberg, Switzerland",
+"lat": 47.408,
+"lon": 8.508,
+"precision": "city"
+},
+"feira de santana, ba, brasil": {
+"country": "BR",
+"label": "Feira de Santana, Brazil",
+"lat": -12.258,
+"lon": -38.96,
+"precision": "city"
+},
+"finland, helsinki": {
+"country": "FI",
+"label": "Helsinki, Finland",
+"lat": 60.167,
+"lon": 24.944,
+"precision": "city"
+},
+"geneva, switzerland": {
+"country": "CH",
+"label": "Geneva, Switzerland",
+"lat": 46.202,
+"lon": 6.147,
+"precision": "city"
+},
+"groningen, nl": {
+"country": "NL",
+"label": "Groningen, Netherlands",
+"lat": 53.219,
+"lon": 6.568,
+"precision": "city"
+},
+"göttingen, germany": {
+"country": "DE",
+"label": "Göttingen, Germany",
+"lat": 51.533,
+"lon": 9.935,
+"precision": "city"
+},
+"hangzhou/beijing": {
+"country": "CN",
+"label": "Bank ok Hangzhou, China",
+"lat": 40.036,
+"lon": 116.316,
+"precision": "city"
+},
+"hannover, germany": {
+"country": "DE",
+"label": "Hanover, Germany",
+"lat": 52.374,
+"lon": 9.739,
+"precision": "city"
+},
+"heidelberg, germany": {
+"country": "DE",
+"label": "Heidelberg, Germany",
+"lat": 49.409,
+"lon": 8.695,
+"precision": "city"
+},
+"hong kong": {
+"country": "CN",
+"label": "Hong Kong, China",
+"lat": 22.282,
+"lon": 114.158,
+"precision": "city"
+},
+"houston, tx": {
+"country": "US",
+"label": "Houston, United States",
+"lat": 29.759,
+"lon": -95.368,
+"precision": "city"
+},
+"istanbul, turkey": {
+"country": "TR",
+"label": "Istanbul, Turkey",
+"lat": 41.006,
+"lon": 28.976,
+"precision": "city"
+},
+"lagos, nigeria": {
+"country": "NG",
+"label": "Lagos, Nigeria",
+"lat": 6.455,
+"lon": 3.394,
+"precision": "city"
+},
+"leipzig (germany)": {
+"country": "DE",
+"label": "Leipzig, Germany",
+"lat": 51.341,
+"lon": 12.375,
+"precision": "city"
+},
+"leipzig, germany": {
+"country": "DE",
+"label": "Leipzig, Germany",
+"lat": 51.341,
+"lon": 12.375,
+"precision": "city"
+},
+"lille, france": {
+"country": "FR",
+"label": "Lille, France",
+"lat": 50.637,
+"lon": 3.064,
+"precision": "city"
+},
+"lima, perú": {
+"country": "PE",
+"label": "Lima, Peru",
+"lat": -12.046,
+"lon": -77.031,
+"precision": "city"
+},
+"london": {
+"country": "GB",
+"label": "London, United Kingdom",
+"lat": 51.507,
+"lon": -0.128,
+"precision": "city"
+},
+"london, glasgow, manchester, birmingham, rome, cape town": null,
+"london, uk": {
+"country": "GB",
+"label": "Warner Music UK, United Kingdom",
+"lat": 51.5,
+"lon": -0.192,
+"precision": "city"
+},
+"london, united kingdom": {
+"country": "GB",
+"label": "London, United Kingdom",
+"lat": 51.507,
+"lon": -0.128,
+"precision": "city"
+},
+"ma": {
+"country": "MY",
+"label": "Malaysia",
+"lat": 4.569,
+"lon": 102.266,
+"precision": "country"
+},
+"madison, wisconsin": {
+"country": "US",
+"label": "Madison, United States",
+"lat": 43.075,
+"lon": -89.384,
+"precision": "city"
+},
+"marienlyst, oslo, norway": {
+"country": "NO",
+"label": "Marienlyst, Norway",
+"lat": 59.935,
+"lon": 10.722,
+"precision": "city"
+},
+"menlo park, california": {
+"country": "US",
+"label": "Menlo Park, United States",
+"lat": 37.452,
+"lon": -122.178,
+"precision": "city"
+},
+"minneapolis, mn": {
+"country": "US",
+"label": "Minneapolis, United States",
+"lat": 44.977,
+"lon": -93.265,
+"precision": "city"
+},
+"mountain view, california": {
+"country": "US",
+"label": "Mountain View, United States",
+"lat": 37.389,
+"lon": -122.083,
+"precision": "city"
+},
+"multiple locations": null,
+"mülheim an der ruhr, europe 🇪🇺": {
+"country": "DE",
+"label": "Freilichtbühne Mülheim an der Ruhr, Germany",
+"lat": 51.422,
+"lon": 6.886,
+"precision": "city"
+},
+"münchen, deutschland": {
+"country": "DE",
+"label": "Munich, Germany",
+"lat": 48.137,
+"lon": 11.575,
+"precision": "city"
+},
+"nanjing": {
+"country": "CN",
+"label": "Nanjing, China",
+"lat": 32.044,
+"lon": 118.779,
+"precision": "city"
+},
+"natal-rn": {
+"country": "BR",
+"label": "Natal, Brazil",
+"lat": -5.805,
+"lon": -35.208,
+"precision": "city"
+},
+"new york city": {
+"country": "US",
+"label": "New York City Ballet, United States",
+"lat": 40.772,
+"lon": -73.984,
+"precision": "city"
+},
+"new york, new york": {
+"country": "US",
+"label": "New York, United States",
+"lat": 40.713,
+"lon": -74.006,
+"precision": "city"
+},
+"new york, ny": {
+"country": "US",
+"label": "New York, United States",
+"lat": 40.713,
+"lon": -74.006,
+"precision": "city"
+},
+"northern california, usa": {
+"country": "US",
+"label": "Springfield U.S.A., United States",
+"lat": 34.139,
+"lon": -118.354,
+"precision": "city"
+},
+"oakland, ca": {
+"country": "US",
+"label": "Oakland, United States",
+"lat": 37.804,
+"lon": -122.271,
+"precision": "city"
+},
+"oslo, norway": {
+"country": "NO",
+"label": "Oslo, Norway",
+"lat": 59.913,
+"lon": 10.739,
+"precision": "city"
+},
+"palo alto, ca": {
+"country": "US",
+"label": "Palo Alto, United States",
+"lat": 37.444,
+"lon": -122.16,
+"precision": "city"
+},
+"paris": {
+"country": "FR",
+"label": "Paris, France",
+"lat": 48.853,
+"lon": 2.348,
+"precision": "city"
+},
+"paris, france": {
+"country": "FR",
+"label": "Paris, France",
+"lat": 48.853,
+"lon": 2.348,
+"precision": "city"
+},
+"portland, or": {
+"country": "US",
+"label": "Portland, United States",
+"lat": 45.52,
+"lon": -122.674,
+"precision": "city"
+},
+"portland, oregon": {
+"country": "US",
+"label": "Portland, United States",
+"lat": 45.52,
+"lon": -122.674,
+"precision": "city"
+},
+"recife, brazil": {
+"country": "BR",
+"label": "Recife, Brazil",
+"lat": -8.058,
+"lon": -34.885,
+"precision": "city"
+},
+"redmond, wa": {
+"country": "US",
+"label": "Redmond, United States",
+"lat": 47.669,
+"lon": -122.124,
+"precision": "city"
+},
+"rensselaer polytechnic institute": {
+"country": "US",
+"label": "Rensselaer Polytechnic Institute, United States",
+"lat": 42.73,
+"lon": -73.68,
+"precision": "city"
+},
+"riga": {
+"country": "LV",
+"label": "Riga, Latvia",
+"lat": 56.949,
+"lon": 24.105,
+"precision": "city"
+},
+"russia, saint petersburg": {
+"country": "RU",
+"label": "Saint Petersburg, Russia",
+"lat": 59.961,
+"lon": 30.159,
+"precision": "region"
+},
+"san francisco, ca": {
+"country": "US",
+"label": "San Francisco, United States",
+"lat": 37.788,
+"lon": -122.408,
+"precision": "city"
+},
+"seattle, wa": {
+"country": "US",
+"label": "Seattle, United States",
+"lat": 47.604,
+"lon": -122.33,
+"precision": "city"
+},
+"shenzhen,china": {
+"country": "CN",
+"label": "Shenzhen, China",
+"lat": 22.545,
+"lon": 114.055,
+"precision": "city"
+},
+"singapore": {
+"country": "SG",
+"label": "Singapore",
+"lat": 1.357,
+"lon": 103.819,
+"precision": "country"
+},
+"south of france, france": {
+"country": "FR",
+"label": "Embassy of South Korea, France",
+"lat": 48.858,
+"lon": 2.316,
+"precision": "city"
+},
+"stanford, ca": {
+"country": "US",
+"label": "Stanford, United States",
+"lat": 37.427,
+"lon": -122.17,
+"precision": "city"
+},
+"stuttgart, germany": {
+"country": "DE",
+"label": "Stuttgart, Germany",
+"lat": 48.778,
+"lon": 9.18,
+"precision": "city"
+},
+"sydney": {
+"country": "AU",
+"label": "Sydney, Australia",
+"lat": -33.87,
+"lon": 151.208,
+"precision": "city"
+},
+"sydney, australia": {
+"country": "AU",
+"label": "Sydney, Australia",
+"lat": -33.87,
+"lon": 151.208,
+"precision": "city"
+},
+"são paulo": {
+"country": "BR",
+"label": "São Paulo, Brazil",
+"lat": -22.07,
+"lon": -48.433,
+"precision": "region"
+},
+"tbilisi": {
+"country": "GE",
+"label": "Tbilisi, Georgia",
+"lat": 41.693,
+"lon": 44.801,
+"precision": "city"
+},
+"the world": {
+"country": "AE",
+"label": "The World, United Arab Emirates",
+"lat": 25.237,
+"lon": 55.195,
+"precision": "city"
+},
+"thiruvananthapuram": {
+"country": "IN",
+"label": "Thiruvananthapuram, India",
+"lat": 8.488,
+"lon": 76.948,
+"precision": "city"
+},
+"tokyo / japan": {
+"country": "JP",
+"label": "Tokyo, Japan",
+"lat": 35.677,
+"lon": 139.764,
+"precision": "city"
+},
+"tokyo, japan": {
+"country": "JP",
+"label": "Tokyo, Japan",
+"lat": 35.677,
+"lon": 139.764,
+"precision": "city"
+},
+"toronto, on, ca": {
+"country": "CA",
+"label": "Toronto, Canada",
+"lat": 43.653,
+"lon": -79.384,
+"precision": "city"
+},
+"university of virginia": {
+"country": "US",
+"label": "University of Virginia, United States",
+"lat": 38.034,
+"lon": -78.504,
+"precision": "city"
+},
+"walldorf, germany": {
+"country": "DE",
+"label": "Walldorf, Germany",
+"lat": 49.303,
+"lon": 8.643,
+"precision": "city"
+},
+"washington dc": {
+"country": "US",
+"label": "Washington, United States",
+"lat": 38.895,
+"lon": -77.036,
+"precision": "city"
+},
+"washington, d.c.": {
+"country": "US",
+"label": "Washington, United States",
+"lat": 38.895,
+"lon": -77.036,
+"precision": "city"
+},
+"washington, dc metro": {
+"country": "US",
+"label": "Metro Center, United States",
+"lat": 38.898,
+"lon": -77.028,
+"precision": "city"
+},
+"we're working from home these days. stay safe.": null,
+"world": {
+"country": "US",
+"label": "World Bank (J building), United States",
+"lat": 38.899,
+"lon": -77.041,
+"precision": "city"
+},
+"your high school": {
+"country": "PK",
+"label": "Boys Primary School Yourungut, Pakistan",
+"lat": 34.946,
+"lon": 76.222,
+"precision": "city"
+},
+"☁️": {
+"country": "HU",
+"label": "Gárgyán-erdő, Hungary",
+"lat": 46.207,
+"lon": 19.792,
+"precision": "city"
+},
+"🇫🇷 / 🇨🇦 (qc)": null
+}

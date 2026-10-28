@@ -12,13 +12,13 @@ const ago = (d) => { if (!d) return ''; const y = (Date.now() - new Date(d)) / 3
 
 // ---------- the five pillars ----------
 const P = {
-  p1: { key: 'p1', n: 1, colour: '#ffcf8a', name: "You're not the only one", what: 'Independent teams, far apart, doing nearly the same work at the same time.', file: 'converging.json' },
+  p1: { key: 'p1', n: 1, colour: '#ffb45e', name: "You're not the only one", what: 'Independent teams, far apart, doing nearly the same work at the same time.', file: 'converging.json' },
   p2: { key: 'p2', n: 2, colour: '#6fe3c1', name: 'Solved somewhere else', what: 'A problem met in one place, joined to an earlier documented answer in another country.', file: 'solved.json' },
   p3: { key: 'p3', n: 3, colour: '#b9a2ff', name: "The world's unfinished work", what: 'Valued projects that stopped. Each ring is a nearly finished answer someone could pick up.', file: 'unfinished.json' },
   p4: { key: 'p4', n: 4, colour: '#cfe4ff', name: "Everything we're stuck on", what: 'Open problems, drawn in the sky because they belong to no place. Quiet ones glow.', file: 'stuck.json' },
   p5: { key: 'p5', n: 5, colour: '#ff9f8f', name: "Leftovers and missing pieces", what: 'Places where people leave what they have spare. Only the offers are published.', file: 'leftovers.json' },
 };
-const LINK = '#fff1c9';
+const LINK = '#fff8ea';
 const ICON = {
   p1: (c) => `<svg viewBox="0 0 26 26" class="ico"><path d="M6 17 Q13 4 20 17" fill="none" stroke="${c}" stroke-width="1.3" opacity=".8"/><circle cx="6" cy="17" r="3.2" fill="${c}"/><circle cx="20" cy="17" r="3.2" fill="${c}"/></svg>`,
   p2: (c) => `<svg viewBox="0 0 26 26" class="ico"><path d="M7 19 L19 7" stroke="${c}" stroke-width="1.3" stroke-dasharray="2.2 2.4"/><path d="M19 3.5 L22.5 7 L19 10.5 L15.5 7Z" fill="${c}"/><path d="M7 15.5 L10.5 19 L7 22.5 L3.5 19Z" fill="none" stroke="${c}" stroke-width="1.3"/></svg>`,
@@ -40,7 +40,7 @@ S.select = (id) => { pauseDrift(); select(id, true); };
 const map = new maplibregl.Map({
   container: 'map',
   style: { version: 8, projection: { type: 'globe' }, sources: {}, layers: [] },
-  center: [10, 22], zoom: isMobile() ? 0.05 : 0.9, attributionControl: false, maxPitch: 0, renderWorldCopies: false,
+  center: [10, 22], zoom: isMobile() ? 0.05 : 1.05, attributionControl: false, maxPitch: 0, renderWorldCopies: false,
   canvasContextAttributes: { alpha: true, antialias: true },
 });
 S.map = map;
@@ -81,15 +81,16 @@ map.on('load', async () => {
   // 1: converging teams, amber arcs with travelling sparks
   map.addLayer({ id: 'p1t-glow', type: 'line', source: 'p1t', layout: { 'line-cap': 'round' }, paint: { 'line-color': P.p1.colour, 'line-width': 5, 'line-blur': 5, 'line-opacity': 0.13 } });
   map.addLayer({ id: 'p1t', type: 'line', source: 'p1t', layout: { 'line-cap': 'round' }, paint: { 'line-color': P.p1.colour, 'line-width': 1, 'line-opacity': 0.55 } });
-  map.addLayer({ id: 'p1s', type: 'circle', source: 'p1s', paint: { 'circle-radius': 2.6, 'circle-blur': 0.8, 'circle-color': '#fff3dc', 'circle-opacity': ['get', 'o'], 'circle-pitch-alignment': 'map' } });
+  map.addLayer({ id: 'p1s', type: 'circle', source: 'p1s', paint: { 'circle-radius': 2.6, 'circle-blur': 0.8, 'circle-color': '#ffd9a8', 'circle-opacity': ['get', 'o'], 'circle-pitch-alignment': 'map' } });
   map.addLayer({ id: 'p1', type: 'circle', source: 'p1', paint: { 'circle-radius': 3.2, 'circle-color': P.p1.colour, 'circle-opacity': 0.95, 'circle-stroke-width': 4, 'circle-stroke-color': P.p1.colour, 'circle-stroke-opacity': 0.15, 'circle-pitch-alignment': 'map' } });
   // gold threads where layers meet
-  map.addLayer({ id: 'lk-glow', type: 'line', source: 'lk', layout: { 'line-cap': 'round' }, paint: { 'line-color': LINK, 'line-width': 7, 'line-blur': 6, 'line-opacity': 0.18 } });
-  map.addLayer({ id: 'lk', type: 'line', source: 'lk', layout: { 'line-cap': 'round' }, paint: { 'line-color': LINK, 'line-width': 1.7, 'line-opacity': 0.8 } });
+  map.addLayer({ id: 'lk-glow', type: 'line', source: 'lk', layout: { 'line-cap': 'round' }, paint: { 'line-color': '#fff1c9', 'line-width': 8, 'line-blur': 7, 'line-opacity': 0.16 } });
+  map.addLayer({ id: 'lk', type: 'line', source: 'lk', layout: { 'line-cap': 'round' }, paint: { 'line-color': LINK, 'line-width': 1.6, 'line-opacity': 0.9 } });
   map.addLayer({ id: 'lks', type: 'circle', source: 'lks', paint: { 'circle-radius': 3, 'circle-blur': 0.7, 'circle-color': '#ffffff', 'circle-opacity': ['get', 'o'], 'circle-pitch-alignment': 'map' } });
   map.addLayer({ id: 'sel', type: 'circle', source: 'sel', paint: { 'circle-radius': 14, 'circle-color': 'transparent', 'circle-stroke-color': ['get', 'c'], 'circle-stroke-width': 1.2, 'circle-stroke-opacity': 0.9, 'circle-pitch-alignment': 'map' } });
 
   wirePointer();
+  document.querySelectorAll('.maplibregl-ctrl-attrib').forEach(a => { a.classList.remove('maplibregl-compact-show'); a.removeAttribute('open'); });
   await loadAll();
   requestAnimationFrame(tick);
 });
@@ -111,10 +112,11 @@ async function loadAll() {
   const hash = decodeURIComponent(location.hash.slice(1)); if (hash && S.byId.has(hash)) { pauseDrift(); select(hash, true); }
 }
 const okMeta = (d) => d && !d.__error && d.meta;
-function setStatus(k, d, count, extra) {
-  if (!okMeta(d)) { S.status[k] = { count: 0, warn: true, text: k === 'p4' ? 'Arriving soon: this layer has not published yet.' : `Unavailable right now (${d?.__error || 'no data'}).` }; return; }
+const londonDay = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', day: 'numeric', month: 'short' });
+function setStatus(k, d, count, short, long) {
+  if (!okMeta(d)) { S.status[k] = { count: 0, warn: true, text: k === 'p4' ? 'Arriving soon: this layer has not published yet.' : `Unavailable right now (${d?.__error || 'no data'}).`, long: '' }; return; }
   const m = d.meta, st = m.status || {};
-  S.status[k] = { count, warn: st.ok === false, text: (st.ok === false && st.note ? st.note + ' ' : '') + (extra || '') + `Updated ${fmtStamp(m.generated)}.` };
+  S.status[k] = { count, warn: st.ok === false, text: (st.ok === false && st.note ? st.note + ' ' : '') + (short || '') + ` · updated ${londonDay.format(new Date(m.generated))}`, long: (long || '') + ` Updated ${fmtStamp(m.generated)}.` };
 }
 function addIndex(key, id, title, sub, text, item) {
   S.byId.set(id, { key, id, title, sub, item });
@@ -137,7 +139,7 @@ function buildP1(d) {
   }
   map.getSource('p1').setData(fc(pts)); map.getSource('p1t').setData(fc(lines));
   const total = d.topics.reduce((a, t) => a + t.convergences.length, 0);
-  setStatus('p1', d, total, `${d.topics.length} problems swept weekly (last sweep ${fmtStamp(d.meta.sweptAt)}). `);
+  setStatus('p1', d, total, `${n(total)} convergences across ${d.topics.length} problems`, `Weekly sweep of ${d.topics.length} problems; last sweep ${fmtStamp(d.meta.sweptAt)}.`);
 }
 
 function buildP2(d) {
@@ -150,7 +152,7 @@ function buildP2(d) {
   for (const p of d.pairs) { const a = byId.get(p.from), b = byId.get(p.to); if (!a || !b) continue; const segs = arc([a.lon, a.lat], [b.lon, b.lat], 64); if (segs) segs.forEach(s => lines.push({ type: 'Feature', properties: { id: p.from }, geometry: { type: 'LineString', coordinates: s } })); }
   map.getSource('p2t').setData(fc(lines));
   for (const i of d.items) addIndex('p2', i.id, i.title, `${i.place}${i.start ? ' · ' + year(i.start) : ''}`, [i.desc, i.problem, i.topics.join(' '), i.issues.join(' ')].join(' '), i);
-  setStatus('p2', d, d.items.length, `${n(d.meta.documented)} with documented outcomes, ${n(d.meta.pairs)} joined to an earlier answer abroad. `);
+  setStatus('p2', d, d.items.length, `${n(d.meta.pairs)} joined to an earlier answer abroad`, `${n(d.items.length)} civic cases from Participedia; ${n(d.meta.documented)} write up their outcomes.`);
 }
 
 function buildP3(d) {
@@ -159,7 +161,7 @@ function buildP3(d) {
   const maxL = Math.log10(Math.max(...placed.map(i => i.stars), 10));
   map.getSource('p3').setData(fc(placed.map(i => pt(i.place.lon + jitter(i.id, 0.25), i.place.lat + jitter(i.id + 'y', 0.25), { id: i.id, w: Math.min(1, Math.log10(i.stars) / maxL) }))));
   for (const i of d.items) addIndex('p3', i.id, i.title, `${i.desc}`, `${i.topics.join(' ')} ${i.themes.join(' ')} ${i.where || ''}`, i);
-  setStatus('p3', d, d.items.length, `${n(d.meta.placed)} have a public location and are drawn; the rest are searchable. `);
+  setStatus('p3', d, d.items.length, `${n(d.meta.placed)} drawn, the rest searchable`, `Archived GitHub repositories with at least ${d.meta.minStars} stars on real-world topics, plus earlier attempts at the problems in layer 1. Only owners with a public location are drawn.`);
 }
 
 function buildP4(d) {
@@ -176,7 +178,7 @@ function buildP4(d) {
   S.families = fams;
   for (const p of d.problems) addIndex('p4', p.id, p.title, `${p.family}${p.subfield ? ' · ' + p.subfield : ''}`, (p.statement || '') + ' ' + (p.query || ''), p);
   const quiet = S.stars.filter(s => s.quiet).length;
-  setStatus('p4', d, d.problems.length, `${n(quiet)} glow: almost nobody is visibly working on them. `);
+  setStatus('p4', d, d.problems.length, `${n(quiet)} glow, almost untouched`, `${n(d.problems.length)} open problems; ${n(quiet)} have almost no visible work in two years.`);
 }
 
 function buildP5(d) {
@@ -184,8 +186,8 @@ function buildP5(d) {
   S.p5kinds = d.meta.kinds;
   map.getSource('p5').setData(fc(d.items.map(i => pt(i.lon, i.lat, { id: i.id }))));
   for (const i of d.items) addIndex('p5', i.id, i.name || d.meta.kinds[i.kind]?.label || 'Unnamed', `${d.meta.kinds[i.kind]?.label || i.kind}${i.city ? ' · ' + i.city : ''}`, (i.note || '') + ' ' + i.kind.replace('_', ' '), i);
-  const c = d.meta.counts || {};
-  setStatus('p5', d, d.items.length, Object.entries(c).filter(([, v]) => v).map(([k, v]) => `${n(v)} ${d.meta.kinds[k]?.label.toLowerCase()}${v === 1 ? '' : 's'}`).join(', ').replace(/caf(é|e)s?s/, 'cafés') + '. No open source of needs to match them to. ');
+  const c = d.meta.counts || {}, PL = { give_box: 'give boxes', food_sharing: 'community fridges', freeshop: 'free shops', tool_library: 'tool libraries', repair_cafe: 'repair cafés' };
+  setStatus('p5', d, d.items.length, 'offers only; needs are not published', Object.entries(c).filter(([, v]) => v).map(([k, v]) => `${n(v)} ${v === 1 ? (d.meta.kinds[k]?.label || k).toLowerCase() : PL[k] || k}`).join(', ') + '. No open source of needs to match them to.');
 }
 
 function buildLinks(d) {
@@ -223,16 +225,21 @@ function renderLegend() {
   const el = $('legend');
   el.innerHTML = ['p1', 'p2', 'p3', 'p4', 'p5'].map(k => {
     const p = P[k], st = S.status[k] || {};
-    return `<button class="layer ${S.on[k] ? '' : 'off'}" data-k="${k}" aria-pressed="${S.on[k]}" title="Show or hide this layer">
+    return `<button class="layer ${S.on[k] ? '' : 'off'}" data-k="${k}" aria-pressed="${S.on[k]}" title="${esc((st.long || '').trim())} Click to show or hide; hover to see it alone.">
       ${ICON[k](p.colour)}<span class="name" style="color:${p.colour}">${esc(p.name)}</span><span class="num">${st.count ? n(st.count) : '–'}</span>
       <span class="what">${esc(p.what)}</span><span class="state ${st.warn ? 'warn' : ''}">${esc(st.text || '')}</span></button>`;
-  }).join('') + `<button class="linkrow ${S.on.link ? '' : 'off'}" data-k="link">${ICON.link()}<span><span style="color:${LINK}">Gold threads</span>: ${n(S.links.filter(l => l.ok).length)} places where two layers genuinely meet</span></button>`;
-  el.querySelectorAll('[data-k]').forEach(b => b.onclick = () => toggle(b.dataset.k));
+  }).join('') + `<button class="linkrow ${S.on.link ? '' : 'off'}" data-k="link">${ICON.link()}<span><span style="color:${LINK}">Common threads</span>: ${n(S.links.filter(l => l.ok).length)} places where two layers genuinely meet</span></button>`;
+  el.querySelectorAll('[data-k]').forEach(b => { b.onclick = () => toggle(b.dataset.k); if (!isMobile()) { b.onmouseenter = () => solo(b.dataset.k); b.onmouseleave = () => solo(null); } });
 }
 function renderIntro() {
   $('introFive').innerHTML = ['p1', 'p2', 'p3', 'p4', 'p5'].map(k => `<li>${ICON[k](P[k].colour)}<div><b style="color:${P[k].colour}">${esc(P[k].name)}</b><span>${esc(P[k].what)}</span></div></li>`).join('');
 }
 $('aboutBtn').onclick = () => $('intro').showModal();
+const LAYERS = { p1: ['p1', 'p1t', 'p1t-glow', 'p1s'], p2: ['p2', 'p2t'], p3: ['p3'], p4: [], p5: ['p5'], link: ['lk', 'lk-glow', 'lks'] };
+function solo(k) {
+  S.solo = k;
+  for (const [key, ids] of Object.entries(LAYERS)) ids.forEach(id => map.setLayoutProperty(id, 'visibility', S.on[key] && (!k || k === key) ? 'visible' : 'none'));
+}
 function toggle(k) {
   S.on[k] = !S.on[k];
   const vis = S.on[k] ? 'visible' : 'none';
@@ -281,15 +288,17 @@ addEventListener('resize', sizeCanvases); sizeCanvases();
 function drawSky(t) {
   sg.clearRect(0, 0, innerWidth, innerHeight);
   const g = globeGeom(); S.g = g;
+  if (!Number.isFinite(g.cx + g.cy + g.r)) return;
   // faint far stars, purely decorative and labelled as such in the code: not data
   sg.fillStyle = 'rgba(255,255,255,0.05)';
   for (let i = 0; i < 140; i++) { const h = hash('bg' + i); sg.fillRect(h % innerWidth, (h >> 11) % innerHeight, 1, 1); }
-  if (!S.on.p4 || !S.stars.length) return;
+  if (!S.on.p4 || !S.stars.length || (S.solo && S.solo !== 'p4')) return;
   const sel = S.sel?.id;
   sg.font = '10px -apple-system, Segoe UI, sans-serif'; sg.textAlign = 'center'; sg.fillStyle = 'rgba(207,228,255,0.32)';
   if (!isMobile()) for (const sec of S.sectors || []) { const [x, y] = starXY({ a: (sec.a0 + sec.a1) / 2, r: 2.04 }, g, t); if (x > 300 && x < innerWidth - 20 && y > 60 && y < innerHeight - 110) sg.fillText(sec.f.toUpperCase(), x, y); }
   for (const s of S.stars) {
     const [x, y] = starXY(s, g, t); s.x = x; s.y = y;
+    if (!Number.isFinite(x + y)) { s.vis = false; continue; }
     if (x < -10 || y < -10 || x > innerWidth + 10 || y > innerHeight + 10) { s.vis = false; continue; }
     // hide stars that fall in front of the globe disc
     if (Math.hypot(x - g.cx, y - g.cy) < g.r * 1.02) { s.vis = false; continue; }
@@ -301,13 +310,13 @@ function drawSky(t) {
       sg.fillStyle = gr; sg.fillRect(x - 9, y - 9, 18, 18);
       sg.fillStyle = `rgba(240,247,255,${0.9 * tw})`; sparkle(sg, x, y, 3.4);
     } else { sg.fillStyle = `rgba(207,228,255,${0.22 + 0.25 * (s.p.neglect || 0)})`; sg.fillRect(x - 0.8, y - 0.8, 1.6, 1.6); }
-    if (s.p.id === sel) { sg.strokeStyle = P.p4.colour; sg.lineWidth = 1; sg.beginPath(); sg.arc(x, y, 11, 0, 7); sg.stroke(); }
+    if (s.p.id === sel || (S.sel?.key === 'link' && (S.sel.item.a === s.p.id || S.sel.item.b === s.p.id))) { sg.strokeStyle = P.p4.colour; sg.lineWidth = 1; sg.beginPath(); sg.arc(x, y, 11, 0, 7); sg.stroke(); }
   }
 }
 function sparkle(g, x, y, r) { g.beginPath(); g.moveTo(x, y - r); g.lineTo(x + r * 0.25, y - r * 0.25); g.lineTo(x + r, y); g.lineTo(x + r * 0.25, y + r * 0.25); g.lineTo(x, y + r); g.lineTo(x - r * 0.25, y + r * 0.25); g.lineTo(x - r, y); g.lineTo(x - r * 0.25, y - r * 0.25); g.closePath(); g.fill(); }
 function drawOverlay(t) {
   og.clearRect(0, 0, innerWidth, innerHeight);
-  if (!S.on.link || !S.on.p4) return;
+  if (!S.on.link || !S.on.p4 || (S.solo && S.solo !== 'link' && S.solo !== 'p4')) return;
   for (const { l, a, b } of S.groundLinks) {
     const star = (a.star || b.star), ground = a.ground ? a : b;
     if (!star?.vis || !ground?.ll || !facing(ground.ll)) continue;
@@ -352,7 +361,7 @@ function wirePointer() {
     if (!id) { tip.hidden = true; map.getCanvas().style.cursor = ''; return; }
     const en = S.byId.get(id); if (!en) return;
     map.getCanvas().style.cursor = 'pointer';
-    const c = en.key === 'link' ? LINK : P[en.key].colour, name = en.key === 'link' ? 'Gold thread' : P[en.key].name;
+    const c = en.key === 'link' ? LINK : P[en.key].colour, name = en.key === 'link' ? 'Common thread' : P[en.key].name;
     tip.innerHTML = `<div class="k" style="color:${c}">${esc(name)}</div><div>${esc(en.title.length > 120 ? en.title.slice(0, 118) + '…' : en.title)}</div><div class="m">${esc((en.sub || '').slice(0, 140))}</div>`;
     tip.hidden = false; tip.style.left = Math.min(e.originalEvent.clientX + 14, innerWidth - 310) + 'px'; tip.style.top = Math.min(e.originalEvent.clientY + 14, innerHeight - 120) + 'px';
   });
@@ -366,7 +375,8 @@ function select(id, fly = true) {
   S.sel = en; history.replaceState(null, '', '#' + encodeURIComponent(id));
   const ll = en.key === 'link' ? linkGround(en.item) : locate(en);
   map.getSource('sel').setData(fc(ll ? [pt(ll[0], ll[1], { c: en.key === 'link' ? LINK : P[en.key].colour })] : []));
-  if (fly && ll) flyTo(ll, en.key === 'p5' ? 4.2 : en.key === 'p1' ? null : 2.6, en);
+  const touchesSky = en.key === 'link' && [en.item.a, en.item.b].some(r => S.byId.get(r)?.key === 'p4');
+  if (fly && ll) flyTo(ll, touchesSky ? 1.0 : en.key === 'p5' ? 4.2 : en.key === 'p1' ? null : 2.6, touchesSky ? null : en);
   if (fly && en.key === 'p4') flyTo([map.getCenter().lng, 15], isMobile() ? -0.3 : 0.45);
   $('detail').hidden = false; $('detailBody').innerHTML = detailHTML(en); $('detail').scrollTop = 0;
   $('detailBody').querySelectorAll('[data-go]').forEach(a => a.onclick = () => { pauseDrift(); select(a.dataset.go, true); });
@@ -377,7 +387,7 @@ function flyTo(ll, zoom, en) {
   if (en?.key === 'p1') { const pts = en.item.members.filter(m => m.place).map(m => [m.place.lon, m.place.lat]); const v = viewFor(pts); ll = v.center; z = v.zoom; }
   if (z == null) z = 2.2;
   const latFix = Math.log2(Math.cos(rad(Math.min(Math.abs(ll[1]), 80))));
-  z = isMobile() ? z - 1.1 : z; z += latFix; z = Math.max(z, isMobile() ? -0.5 : 0.6);
+  z = isMobile() ? z - 1.1 : z; z += latFix; z = Math.max(z, isMobile() ? -0.5 : 0.95);
   S.flying = true; map.flyTo({ center: ll, zoom: z, duration: reduceMotion ? 0 : 4200, curve: 1.2, essential: true }); map.once('moveend', () => { S.flying = false; });
 }
 function viewFor(points) {
@@ -389,7 +399,7 @@ function viewFor(points) {
 $('detailClose').onclick = () => { $('detail').hidden = true; S.sel = null; map.getSource('sel').setData(fc([])); history.replaceState(null, '', location.pathname); };
 
 const consent = '<p class="consent">Introductions will come later, and only with everyone\'s consent. Nobody here has been contacted.</p>';
-function badge(k) { const c = k === 'link' ? LINK : P[k].colour; return `<span class="badge" style="color:${c}">${k === 'link' ? ICON.link() : ICON[k](c).replace('class="ico"', 'width="18" height="18"')}${esc(k === 'link' ? 'Gold thread · where two layers meet' : P[k].n + ' · ' + P[k].name)}</span>`; }
+function badge(k) { const c = k === 'link' ? LINK : P[k].colour; return `<span class="badge" style="color:${c}">${k === 'link' ? ICON.link() : ICON[k](c).replace('class="ico"', 'width="18" height="18"')}${esc(k === 'link' ? 'Common thread · where two layers meet' : P[k].n + ' · ' + P[k].name)}</span>`; }
 function relatedLinks(id) {
   const ls = S.links.filter(l => l.ok && (l.a === id || l.b === id)); if (!ls.length) return '';
   return `<h3>Where this meets another layer</h3>` + ls.map(l => { const other = S.byId.get(l.a === id ? l.b : l.a); return `<div class="thread"><span class="go" data-go="${esc(other.id)}" style="color:${P[other.key].colour}">${esc(other.title.slice(0, 120))}</span><br><small style="color:var(--mute)">${esc(l.why)}</small></div>`; }).join('');
@@ -431,7 +441,7 @@ function runSearch() {
   for (const r of S.index) if (words.every(w => r.hay.includes(w))) { const h = hits[r.key]; if (h.length < 8) h.push(r); h.total = (h.total || 0) + 1; }
   const order = ['link', 'p1', 'p2', 'p3', 'p4', 'p5'];
   let html = '';
-  for (const k of order) { const h = hits[k]; if (!h.length) continue; const c = k === 'link' ? LINK : P[k].colour; html += `<li class="head" style="color:${c}">${esc(k === 'link' ? 'Gold threads' : P[k].name)} · ${n(h.total)}</li>` + h.map(r => `<li data-id="${esc(r.id)}">${k === 'link' ? ICON.link() : ICON[k](c).replace('class="ico"', 'width="16" height="16" style="flex:none;margin-top:2px"')}<span>${esc(r.title.slice(0, 110))}<small>${esc((r.sub || '').slice(0, 90))}</small></span></li>`).join(''); }
+  for (const k of order) { const h = hits[k]; if (!h.length) continue; const c = k === 'link' ? LINK : P[k].colour; html += `<li class="head" style="color:${c}">${esc(k === 'link' ? 'Common threads' : P[k].name)} · ${n(h.total)}</li>` + h.map(r => `<li data-id="${esc(r.id)}">${k === 'link' ? ICON.link() : ICON[k](c).replace('class="ico"', 'width="16" height="16" style="flex:none;margin-top:2px"')}<span>${esc(r.title.slice(0, 110))}<small>${esc((r.sub || '').slice(0, 90))}</small></span></li>`).join(''); }
   el.innerHTML = html || `<li class="none">Nothing in the five layers matches “${esc(q)}” yet.</li>`;
   el.hidden = false;
   el.querySelectorAll('li[data-id]').forEach(li => li.onclick = () => { pauseDrift(); el.hidden = true; select(li.dataset.id, true); });
@@ -468,14 +478,14 @@ function driftStep() {
   if (en) {
     const c = en.key === 'link' ? LINK : P[en.key].colour;
     const cap = $('caption'); cap.style.opacity = 0;
-    setTimeout(() => { $('capKicker').innerHTML = `<span style="color:${c}">${esc(en.key === 'link' ? 'Gold thread · where two layers meet' : P[en.key].n + ' · ' + P[en.key].name)}</span>`; $('capMain').textContent = (captionFor(en) || '').slice(0, 260); cap.style.opacity = 1; }, 900);
+    setTimeout(() => { if (!S.drift) return; $('capKicker').innerHTML = `<span style="color:${c}">${esc(en.key === 'link' ? 'Common thread · where two layers meet' : P[en.key].n + ' · ' + P[en.key].name)}</span>`; $('capMain').textContent = (captionFor(en) || '').slice(0, 260); cap.style.opacity = 1; }, 900);
     S.sel = en;
     const ll = en.key === 'link' ? linkGround(en.item) : locate(en);
     map.getSource('sel').setData(fc(ll ? [pt(ll[0], ll[1], { c })] : []));
-    if (ll) flyTo(ll, en.key === 'p5' ? 3.4 : en.key === 'p1' ? null : 2.2, en); else if (en.key === 'p4') flyTo([map.getCenter().lng + 25, 12], isMobile() ? -0.4 : 0.35);
+    if (ll) { const sky = en.key === 'link' && [en.item.a, en.item.b].some(r => S.byId.get(r)?.key === 'p4'); flyTo(ll, sky ? 1.0 : en.key === 'p5' ? 3.4 : en.key === 'p1' ? null : 2.2, sky ? null : en); } else if (en.key === 'p4') flyTo([map.getCenter().lng + 25, 12], isMobile() ? -0.4 : 0.35);
   }
   S.driftTimer = setTimeout(driftStep, reduceMotion ? 14000 : 11000);
 }
-function startDrift() { S.drift = true; $('driftBtn').setAttribute('aria-pressed', 'true'); $('driftLabel').textContent = 'Drifting through all five'; $('detail').hidden = true; clearTimeout(S.driftTimer); driftStep(); }
+function startDrift() { S.drift = true; $('driftBtn').setAttribute('aria-pressed', 'true'); $('driftLabel').textContent = isMobile() ? 'Drifting' : 'Drifting through all five'; $('detail').hidden = true; clearTimeout(S.driftTimer); driftStep(); }
 function pauseDrift() { if (!S.drift) return; S.drift = false; clearTimeout(S.driftTimer); $('driftBtn').setAttribute('aria-pressed', 'false'); $('driftLabel').textContent = 'Drift'; $('caption').style.opacity = 0; S.sel = null; }
 $('driftBtn').onclick = () => S.drift ? pauseDrift() : startDrift();

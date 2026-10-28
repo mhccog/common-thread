@@ -79,7 +79,7 @@ participants participant held took took place part one two three first second ye
 
 def tokens(s):
     s = (s or '').lower()
-    words = re.findall(r"[a-z][a-z\-']{2,}", s)
+    words = re.findall(r"[^\W\d_][\w\-']{2,}", s)
     return [w.strip("-'") for w in words if w.strip("-'") not in STOP and len(w) > 2]
 
 

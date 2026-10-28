@@ -1,6 +1,6 @@
 """Pillar 3, The world's unfinished work: archived (read-only, no longer maintained) public GitHub repositories
 that set out to solve a real-world problem and that many people valued (stars), placed at the owner's public location."""
-import json, os, subprocess, time, datetime, urllib.parse
+import json, os, re, subprocess, time, datetime, urllib.parse
 from common import get, write_json, read_json, clip
 from geo import geocode, save as save_places
 
@@ -10,7 +10,7 @@ THEMES = {
     'climate-change': 'Climate', 'climate': 'Climate', 'renewable-energy': 'Energy', 
     'healthcare': 'Health', 'public-health': 'Health', 'medical': 'Health', 'mental-health': 'Health', 'covid-19': 'Pandemic', 'coronavirus': 'Pandemic', 'epidemiology': 'Health',
     'accessibility': 'Accessibility', 'a11y': 'Accessibility', 'assistive-technology': 'Accessibility', 'screen-reader': 'Accessibility',
-    'education': 'Education', 'edtech': 'Education', 
+    'edtech': 'Education', 
     'agriculture': 'Food & farming', 'farming': 'Food & farming',
     'humanitarian': 'Humanitarian', 'disaster-response': 'Disasters', 'earthquake': 'Disasters', 'refugees': 'Humanitarian',
     'civic-tech': 'Civic', 'open-government': 'Civic', 'elections': 'Civic', 
@@ -18,6 +18,7 @@ THEMES = {
     'low-resource-languages': 'Language', 'sign-language': 'Accessibility',
 }
 MIN_STARS = 40
+DEV = re.compile(r'\b(snippets?|css|react|vue(\.js)?|angular|svelte|design system|components?|ui kit|interview|editor|slides?|themes?|plugin|boilerplate|templates?|sdk|wrapper|linter|eslint|webpack|date ?picker|tailwind|bootstrap|icons?|fonts?|jquery|wordpress|ui|async|productivity|classroom automat|dashboard template|markdown)\b', re.I)
 
 
 def gh(path):
@@ -66,10 +67,17 @@ def main():
     links = {}
     for tp in topics:
         q = tp.get('gh') or tp.get('query')
+        words = [w for w in q.split() if w not in ('water', 'smartphone', 'early', 'low-cost', 'mitigation', 'surveillance', 'model')]
         try:
-            for r in search(f'{q} in:name,description,topics archived:true stars:>=10'):
+            found = search(f'{" ".join(words)} archived:true stars:>=3')
+            if len(found) < 3 and len(words) > 2:
+                found += search(f'{" ".join(words[:2])} archived:true stars:>=3')
+            for r in found:
+                text = (r.get('description') or '').lower() + ' ' + r['name'].lower() + ' ' + ' '.join(r.get('topics') or [])
+                if not all(w.lower()[:6] in text for w in words):
+                    continue
                 repos[r['full_name']] = r
-                why.setdefault(r['full_name'], set()).add('Same problem as a live convergence')
+                why.setdefault(r['full_name'], set()).add('Wanted again today')
                 links.setdefault(r['full_name'], []).append(tp['topic'])
         except Exception as e:
             errors += 1; print('search failed', q, e)
@@ -86,6 +94,8 @@ def main():
     for name, r in sorted(repos.items(), key=lambda x: -x[1]['stargazers_count']):
         if r.get('fork') or not r.get('description') or r['name'].lower().startswith('awesome') or 'awesome list' in (r.get('description') or '').lower() or 'curated list' in (r.get('description') or '').lower():
             continue
+        if 'Wanted again today' not in why.get(name, set()) and DEV.search(r['description'] + ' ' + r['name'].replace('-', ' ')):
+            continue
         login = r['owner']['login']
         if login not in owners_cache:
             try:
@@ -94,7 +104,7 @@ def main():
             except Exception as e:
                 print('owner failed', login, e); continue
         o = owners_cache[login]
-        place = geocode(o['loc']) if o.get('loc') else None
+        place = geocode(o['loc']) if o.get('loc') and not o['loc'].startswith('http') else None
         items.append({
             'id': 'gh' + str(r['id']), 'title': r['full_name'], 'desc': clip(r['description'], 240),
             'url': r['html_url'], 'stars': r['stargazers_count'], 'forks': r['forks_count'], 'lang': r.get('language'),
@@ -103,6 +113,7 @@ def main():
             'licence': (r.get('license') or {}).get('spdx_id'),
             'place': place, 'where': o.get('loc') or None, 'convergesWith': links.get(name, []),
         })
+    os.makedirs(os.path.join(os.path.dirname(__file__), '..', 'data-cache'), exist_ok=True)
     json.dump(owners_cache, open(os.path.join(os.path.dirname(__file__), '..', 'data-cache', 'owners.json'), 'w'), indent=0, sort_keys=True)
     save_places()
     placed = sum(1 for i in items if i['place'])

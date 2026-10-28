@@ -22,9 +22,35 @@ def save():
     json.dump(_load(), open(PATH, 'w'), ensure_ascii=False, sort_keys=True, indent=0)
 
 
+_countries = None
+ALIASES = {'usa': 'US', 'us': 'US', 'u.s.a.': 'US', 'u.s.': 'US', 'united states': 'US', 'united states of america': 'US', 'america': 'US',
+           'uk': 'GB', 'u.k.': 'GB', 'united kingdom': 'GB', 'england': 'GB', 'great britain': 'GB', 'scotland': 'GB', 'wales': 'GB',
+           'deutschland': 'DE', 'españa': 'ES', 'brasil': 'BR', 'россия': 'RU', '中国': 'CN', '日本': 'JP', 'the netherlands': 'NL', 'holland': 'NL',
+           'remote': None, 'earth': None, 'worldwide': None, 'global': None, 'internet': None, 'the internet': None, 'everywhere': None, 'online': None}
+
+
+def country_only(key):
+    """Exact country names or common aliases go to the country's label point, with 'country only' precision."""
+    global _countries
+    if _countries is None:
+        g = json.load(open(os.path.join(ROOT, 'docs', 'data', 'countries.geojson')))
+        _countries = {f['properties']['a2']: f['properties'] for f in g['features']}
+        for f in g['features']:
+            ALIASES.setdefault(f['properties']['n'].lower(), f['properties']['a2'])
+    k = key.strip(' .')
+    if k in ALIASES:
+        a2 = ALIASES[k]
+        p = _countries.get(a2) if a2 else None
+        return ('hit', {'lat': round(p['ly'], 3), 'lon': round(p['lx'], 3), 'label': p['n'], 'country': a2, 'precision': 'country'} if p else None)
+    return None
+
+
 def geocode(text):
     c = _load()
     key = (text or '').strip().lower()[:120]
+    co = country_only(key)
+    if co:
+        return co[1]
     if not key or len(key) < 2:
         return None
     if key in c:
