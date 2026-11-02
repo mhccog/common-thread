@@ -824,6 +824,11 @@
 "name": "Hack Club",
 "type": "Organization"
 },
+"helpwithcovid": {
+"loc": null,
+"name": null,
+"type": "Organization"
+},
 "hiroppy": {
 "loc": "Tokyo / Japan",
 "name": "Yuta Hiroto",
