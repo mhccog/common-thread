@@ -210,6 +210,13 @@
 "lon": 6.96,
 "precision": "city"
 },
+"denpasar, indonesia": {
+"country": "ID",
+"label": "Denpasar, Indonesia",
+"lat": -8.665,
+"lon": 115.218,
+"precision": "city"
+},
 "digital nomad": {
 "country": "TR",
 "label": "Nest digital nomad house, Turkey",

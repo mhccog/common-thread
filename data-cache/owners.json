@@ -149,6 +149,11 @@
 "name": "Data Science Research Peru",
 "type": "Organization"
 },
+"E3SM-Project": {
+"loc": null,
+"name": "Energy Exascale Earth System Model Project",
+"type": "Organization"
+},
 "ESA-PhiLab": {
 "loc": null,
 "name": "ESA \u03a6-lab",
@@ -207,6 +212,11 @@
 "HDRUK": {
 "loc": "London",
 "name": "Health Data Research UK",
+"type": "Organization"
+},
+"Hack23": {
+"loc": "Sweden",
+"name": "www.hack23.com",
 "type": "Organization"
 },
 "HospitalRun": {
@@ -638,6 +648,11 @@
 "loc": "United States of America",
 "name": "Chan Zuckerberg Initiative",
 "type": "Organization"
+},
+"cmalf": {
+"loc": "Denpasar, Indonesia",
+"name": "CMALF",
+"type": "User"
 },
 "codeforlife-education": {
 "loc": "United Kingdom",
