@@ -49,6 +49,11 @@
 "name": "Centers for Disease Control and Prevention",
 "type": "Organization"
 },
+"CFenner": {
+"loc": "Hamburg, Germany",
+"name": "Christopher Fenner",
+"type": "User"
+},
 "CSSEGISandData": {
 "loc": "Baltimore, MD",
 "name": null,

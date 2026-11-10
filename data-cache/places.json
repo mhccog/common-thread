@@ -267,6 +267,13 @@
 "lon": 9.935,
 "precision": "city"
 },
+"hamburg, germany": {
+"country": "DE",
+"label": "Hamburg, Germany",
+"lat": 53.55,
+"lon": 10.001,
+"precision": "city"
+},
 "hangzhou/beijing": {
 "country": "CN",
 "label": "Bank ok Hangzhou, China",
