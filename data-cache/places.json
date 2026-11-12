@@ -556,6 +556,13 @@
 "lon": 30.159,
 "precision": "region"
 },
+"san francisco": {
+"country": "US",
+"label": "San Francisco, United States",
+"lat": 37.788,
+"lon": -122.408,
+"precision": "city"
+},
 "san francisco, ca": {
 "country": "US",
 "label": "San Francisco, United States",

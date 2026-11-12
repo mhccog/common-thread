@@ -1164,6 +1164,11 @@
 "name": "Peter Arnold",
 "type": "User"
 },
+"patch-technology": {
+"loc": "San Francisco",
+"name": "Patch",
+"type": "Organization"
+},
 "pgracio": {
 "loc": "Sweden",
 "name": "Paulo Gr\u00e1cio",
