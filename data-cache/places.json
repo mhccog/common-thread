@@ -521,6 +521,13 @@
 "lon": -122.674,
 "precision": "city"
 },
+"raleigh": {
+"country": "US",
+"label": "Raleigh, United States",
+"lat": 35.78,
+"lon": -78.639,
+"precision": "city"
+},
 "recife, brazil": {
 "country": "BR",
 "label": "Recife, Brazil",

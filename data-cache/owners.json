@@ -654,6 +654,11 @@
 "name": "Chan Zuckerberg Initiative",
 "type": "Organization"
 },
+"chipmc": {
+"loc": "Raleigh",
+"name": "Chip McClelland",
+"type": "User"
+},
 "cmalf": {
 "loc": "Denpasar, Indonesia",
 "name": "CMALF",
