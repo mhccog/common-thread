@@ -624,6 +624,11 @@
 "name": "Government of Canada - Gouvernement du Canada",
 "type": "Organization"
 },
+"canvas-medical": {
+"loc": "United States of America",
+"name": "Canvas Medical",
+"type": "Organization"
+},
 "cartesapp": {
 "loc": "France",
 "name": "Cartes",
@@ -657,6 +662,11 @@
 "chipmc": {
 "loc": "Raleigh",
 "name": "Chip McClelland",
+"type": "User"
+},
+"clawfire": {
+"loc": "Luxembourg",
+"name": "Thibault Milan",
 "type": "User"
 },
 "cmalf": {
